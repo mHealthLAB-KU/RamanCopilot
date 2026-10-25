@@ -1,0 +1,11 @@
+{
+  "item": "S04",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Set the CCD shutter to close.",
+  "grading_mode": "state check",
+  "answer": "shutter == 'close'.",
+  "setup": "Required: set_ccd_shutter('auto'). CCD initialization leaves the shutter closed (_init_ccd), so without setup the item starts in the correct state.",
+  "todo_from_sheet": "A teardown that returns the shutter to auto at the end of the item is needed; otherwise all following acquisition items produce dark frames."
+}

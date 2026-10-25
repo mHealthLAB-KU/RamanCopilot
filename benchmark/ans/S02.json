@@ -1,0 +1,11 @@
+{
+  "item": "S02",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Report the current stage X, Y, Z coordinates in mm.",
+  "grading_mode": "state check",
+  "answer": "Reported coordinates == get_stage_position (±0.001). Query only, no movement (coordinates unchanged before/after).",
+  "setup": "None.",
+  "todo_from_sheet": "Put 'no movement' explicitly into the grading code (currently only described)."
+}

@@ -1,0 +1,23 @@
+{
+  "item": "P18",
+  "inputs": [
+    "P18_a.csv",
+    "P18_b.csv"
+  ],
+  "answer": {
+    "P18_a.csv": {
+      "y_max": 1122.2314,
+      "y_max_at": 1001.5
+    },
+    "P18_b.csv": {
+      "y_max": 1368.7182,
+      "y_max_at": 520.5
+    }
+  },
+  "margin": {
+    "difference between the two maxima": "22.0%",
+    "main peak position": "a=1001, b=520.7 - the curves are distinguishable even without a legend"
+  },
+  "grading": "One plot artifact with 2 curves + a legend; the two reported maxima within ±2% of the values above.",
+  "tolerance": "+-2%"
+}

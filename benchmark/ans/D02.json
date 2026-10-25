@@ -1,0 +1,16 @@
+{
+  "item": "D02",
+  "kind": "inject session measurement results",
+  "setup": "Inject D02_saturated.csv as the previous measurement result (power 100%, exposure 5.0 s).",
+  "input": "D02_saturated.csv",
+  "answer": {
+    "cause": "Detector saturation (65535 over the whole range = 16-bit ADC limit)",
+    "action": "The re-measurement uses lower exposure or power than the original (100%, 5.0 s)"
+  },
+  "detail": {
+    "all_equal": true,
+    "value": 65535.0,
+    "n_points": 3801
+  },
+  "grading": "Saturation mentioned as the cause + re-measurement parameters with laser_power_pct < 100 or exposure_time < 5.0."
+}

@@ -1,0 +1,26 @@
+{
+  "item": "L09",
+  "inputs": [
+    "L09.csv",
+    "reference_library.csv"
+  ],
+  "preprocess": "Savitzky-Golay window=11, polyorder=3",
+  "answer": {
+    "material": "silicon"
+  },
+  "margin": {
+    "top match before smoothing": [
+      "silicon",
+      0.8516
+    ],
+    "top match after smoothing": [
+      "silicon",
+      0.9608
+    ],
+    "score improvement": 0.1092,
+    "top match agrees across 3 metrics after smoothing": true,
+    "gap between 1st and 2nd after smoothing": 0.97
+  },
+  "tolerance": "material name match + trace of a smoothing call (window/polyorder cited)",
+  "note": "silicon is the top match even before smoothing. Whether smoothing was done must be checked separately from the call trace."
+}

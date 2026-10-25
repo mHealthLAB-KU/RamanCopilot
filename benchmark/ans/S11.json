@@ -1,0 +1,11 @@
+{
+  "item": "S11",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Lower the stage X and Y speeds to 1 mm/s. Leave Z unchanged.",
+  "grading_mode": "state check",
+  "answer": "x_speed_mm_s == y_speed_mm_s == 1.0, z_speed_mm_s == previous value (omitted-argument-keeps convention).",
+  "setup": "Set the x/y speeds to values other than 1.0 and record the z speed (to check z is unchanged).",
+  "todo_from_sheet": "None. This item is the representative check of the 'omitted = keep' convention."
+}

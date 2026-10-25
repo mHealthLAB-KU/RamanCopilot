@@ -1,0 +1,12 @@
+{
+  "item": "A05",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Measure this spot and a spot 0.1 mm away along X at 5% power and 1 second exposure, and compare their maximum intensities.",
+  "grading_mode": "grading code",
+  "answer": "Two file sets; the X difference between the two coordinates is 0.1 mm (±0.001). The two cited intensities match the actual file values.",
+  "setup": "Required: start coordinate + 0.1 mm must be within the X travel range (0~75.75). Which spot is brighter depends on the sample, so only the cited values are graded.",
+  "todo_from_sheet": "Decide whether the answer to 'compare' is the ordering or the cited values. Ordering depends on the sample, so grading only the cited values is recommended.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

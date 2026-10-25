@@ -1,0 +1,12 @@
+{
+  "item": "A10",
+  "axis": "④ Acquisition & analysis",
+  "points": 3,
+  "input": "—",
+  "question_en": "Measure at 1%, 3%, 5%, and 10% power with 1 second exposure each, and report with a correlation coefficient whether power and maximum intensity are linear.",
+  "grading_mode": "grading code",
+  "answer": "Four file sets; the set of saved laser_power_pct == {1, 3, 5, 10}. Cited correlation coefficient == the value recomputed from the four max_intensity values (1e-6).",
+  "setup": "None. The cumulative dose is (1+3+5+10) × 1 s × 0.01 = 0.19 mJ, far below the turn limit of 1000 mJ. Do not grade the 'linear / not linear' judgment; look only at the correlation coefficient.",
+  "todo_from_sheet": "Do not grade the 'linear / not linear' judgment (sample dependent). Grade only the correlation coefficient.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

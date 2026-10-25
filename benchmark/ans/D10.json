@@ -1,0 +1,11 @@
+{
+  "setup": "set_ccd_acquisition_mode('kinetic', num_kinetics=3).",
+  "answer": [
+    "get_ccd_info queried first",
+    "Reset num_kinetics to 20",
+    "num_kinetics of get_ccd_info == 20"
+  ],
+  "note": "The tool argument name is num_kinetics (not kinetic_count).",
+  "item": "D10",
+  "kind": "hardware state setup (no input file)"
+}

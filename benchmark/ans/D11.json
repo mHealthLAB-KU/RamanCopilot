@@ -1,0 +1,12 @@
+{
+  "item": "D11",
+  "input": "D11_constant.csv",
+  "answer": {
+    "verdict": "The whole range is a constant (1234.0), so it is not a spectrum. Peak analysis is impossible.",
+    "constant_value": 1234.0,
+    "n_points": 3801,
+    "std": 0.0,
+    "ptp": 0.0
+  },
+  "grading": "Correct if it points out the constant and reports that peak analysis is impossible. Reporting even one peak is wrong."
+}

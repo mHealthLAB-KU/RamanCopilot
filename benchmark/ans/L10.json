@@ -1,0 +1,18 @@
+{
+  "item": "L10",
+  "inputs": [
+    "L10.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "shift_cm-1": 3.1,
+    "material": "PET"
+  },
+  "margin": {
+    "cosine after shift correction": 0.9988,
+    "gap between 1st and 2nd after correction": 0.5094,
+    "top match agrees across 3 metrics": true
+  },
+  "tolerance": "shift ±0.2, material name match",
+  "overlap": "Overlaps with P20 in \"estimating a uniform shift\". The discriminator of L10 is going on to identification after the shift, so ask it in a different session."
+}

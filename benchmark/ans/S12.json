@@ -1,0 +1,11 @@
+{
+  "item": "S12",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Move the stage to X=35 mm, Y=25 mm. Keep Z as it is.",
+  "grading_mode": "state check",
+  "answer": "Coordinates after the move (35.000, 25.000) ±0.001, z unchanged.",
+  "setup": "Start somewhere other than (35, 25). Record the z value.",
+  "todo_from_sheet": "None."
+}

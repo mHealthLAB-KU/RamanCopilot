@@ -1,0 +1,11 @@
+{
+  "item": "C08",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take 10 consecutive frames at 5% power and 0.5 second exposure.",
+  "grading_mode": "state check + artifact",
+  "answer": "frames length of the saved result == 10, exposure_time == 0.5, acq_mode == 'kinetic'.",
+  "setup": "None (initial num_kin=1).",
+  "todo_from_sheet": "The item does not specify kinetic_cycle_time, so do not grade it."
+}

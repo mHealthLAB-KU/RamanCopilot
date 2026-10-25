@@ -1,0 +1,12 @@
+{
+  "item": "A16",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, and report the standard deviation over 1800-2000 cm-1 for both the original and a smoothed version.",
+  "grading_mode": "grading code",
+  "answer": "requires: calibrated == True. Both values match those recomputed from the artifacts (1e-6), and the smoothed value < the original value.",
+  "setup": "Required: calibrator connected. On the instrument axis 1800-2000 cm-1 has 88 points, so the standard deviation is stable. No smoothing method is specified, so recompute from the arrays the agent saved; do not compare with a reference implementation.",
+  "todo_from_sheet": "No smoothing method is specified, so recompute the 'value after smoothing' from the arrays the agent saved. Do not compare with a reference implementation.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

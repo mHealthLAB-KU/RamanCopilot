@@ -1,0 +1,13 @@
+{
+  "item": "A12",
+  "axis": "④ Acquisition & analysis",
+  "points": 3,
+  "input": "—",
+  "question_en": "Scan a 3x3 grid at 0.01 mm spacing, 3% power, 0.5 second exposure from the current stage position (preview first, then run), and save the average spectrum of the nine points.",
+  "grading_mode": "grading code + artifact",
+  "answer": "tool_sequence: preview_grid_scan → run_grid_scan. 9 files + 1 mean CSV; row count == row count of the individual measurements; mean values match (1e-6).",
+  "setup": "Required: place a sample on which the guide-beam spot is detectable near focus (grid acquisition may run autofocus). Dose is 3% × 0.5 s × 0.01 × 9 = 0.135 mJ.",
+  "todo_from_sheet": "None.",
+  "overlap": "Same 3x3 grid acquisition procedure as A19 (only the final artifact differs: mean vs. heatmap).",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

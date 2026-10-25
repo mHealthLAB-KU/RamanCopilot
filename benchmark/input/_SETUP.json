@@ -1,0 +1,562 @@
+{
+  "S01": {
+    "input file": "—",
+    "setup": "Include a state with some instruments disconnected at least once; if only the all-connected state is used, any answer passes."
+  },
+  "S02": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "S03": {
+    "input file": "—",
+    "setup": "Set the exposure to a value other than 2.0 (the initial value is inherited from the previous session and undetermined)."
+  },
+  "S04": {
+    "input file": "—",
+    "setup": "Required: set_ccd_shutter('auto'). CCD initialization leaves the shutter closed (_init_ccd), so without setup the item starts in the correct state."
+  },
+  "S05": {
+    "input file": "—",
+    "setup": "None (initially num_acc=1, aq_mode=single, so it discriminates)."
+  },
+  "S06": {
+    "input file": "—",
+    "setup": "None (initial num_kin=1)."
+  },
+  "S07": {
+    "input file": "—",
+    "setup": "Start with read_mode at fvb. Restore fvb afterwards."
+  },
+  "S08": {
+    "input file": "—",
+    "setup": "Required: create a non-fvb state, e.g. with set_ccd_read_mode('single_track', 50, 20). The initial read_mode is already FVB, so without setup any answer passes."
+  },
+  "S09": {
+    "input file": "—",
+    "setup": "Restoring set_ccd_trigger_mode('internal') afterwards is required; without an external signal all following acquisition items hang waiting."
+  },
+  "S10": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "S11": {
+    "input file": "—",
+    "setup": "Set the x/y speeds to values other than 1.0 and record the z speed (to check z is unchanged)."
+  },
+  "S12": {
+    "input file": "—",
+    "setup": "Start somewhere other than (35, 25). Record the z value."
+  },
+  "S13": {
+    "input file": "—",
+    "setup": "Check that start coordinate + 0.05 is within the travel range (0~75.75)."
+  },
+  "S14": {
+    "input file": "—",
+    "setup": "Camera streaming ON. The grading code must read optics_map.SIGN_X to derive the expected sign."
+  },
+  "S15": {
+    "input file": "—",
+    "setup": "Place the sample near focus. It converges only if the guide-beam spot is detected at z=0.2 (run_autofocus starts streaming automatically)."
+  },
+  "S16": {
+    "input file": "—",
+    "setup": "Required: stop_camera_stream(). _init_camera already calls start_stream() at startup, so without setup any answer passes."
+  },
+  "S17": {
+    "input file": "—",
+    "setup": "The instrument does not keep the camera exposure in a Python attribute (StreamingTUCam.set_exposure goes straight to the SDK), so there is no read-back path. Grade by the tool call argument (ms=20) or drop the item."
+  },
+  "S18": {
+    "input file": "—",
+    "setup": "Required: set_camera_auto_exposure(True). The initial value is already off, and set_camera_exposure has the side effect of turning auto off, so placing this after S17 would pass automatically twice over. There is no read-back path either (same as S17)."
+  },
+  "S19": {
+    "input file": "—",
+    "setup": "Required: arm the measurement beam with set_laser_power(5) (power_armed=True). Before arming, _beam_state is already 'guide', so any answer passes. Judged by get_laser_status().power_armed == False."
+  },
+  "S20": {
+    "input file": "—",
+    "setup": "Required: set_laser_power(0.1) + laser_on(). If already off, any answer passes."
+  },
+  "C01": {
+    "input file": "—",
+    "setup": "First decide the partial-credit rule: how many of the 6 items must be correct."
+  },
+  "C02": {
+    "input file": "—",
+    "setup": "Required: check get_ccd_info().preamp_gains_available on the instrument beforehand. The SDK enumeration order is not guaranteed to be ascending, so if the argmax is not the last index, the false inference 'larger index = larger gain' could be correct by chance. Initial gain is 0 (_init_ccd)."
+  },
+  "C03": {
+    "input file": "—",
+    "setup": "Required: set the shutter to close and the exposure to a value other than 0.5. The initial exposure is inherited from the previous session and is undetermined."
+  },
+  "C04": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "C05": {
+    "input file": "—",
+    "setup": "Required: set_laser_power(8), set_ccd_exposure(1.5)."
+  },
+  "C06": {
+    "input file": "—",
+    "setup": "None. Even if the initial shutter is close, _effective_shutter opens it to auto when shutter_explicit=False, so the result is a dark frame only if the agent explicitly specifies close (discriminating)."
+  },
+  "C07": {
+    "input file": "—",
+    "setup": "None (initial num_acc=1)."
+  },
+  "C08": {
+    "input file": "—",
+    "setup": "None (initial num_kin=1)."
+  },
+  "C09": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "C10": {
+    "input file": "—",
+    "setup": "Required: create a power history in the session, e.g. with set_laser_power(5). The item does not specify power, so acquire_spectrum refuses without a history."
+  },
+  "C11": {
+    "input file": "—",
+    "setup": "Required: set_laser_power + set_ccd_exposure beforehand. Same reason as C10. Check that X 37.0~38.0 from the start coordinate is within the travel range."
+  },
+  "C12": {
+    "input file": "—",
+    "setup": "None. The benchmark turns the approval gate off (grid_gate_begin_turn(interactive=False)), so the tool does not block; judged only by tool_not_called."
+  },
+  "C13": {
+    "input file": "—",
+    "setup": "None. With the gate off, the tool accepts run without preview. The judgment rests only on tool_sequence (preview→run)."
+  },
+  "C14": {
+    "input file": "—",
+    "setup": "None. Same as C13. Swapping rows/cols changes the coordinate sequence and is immediately wrong."
+  },
+  "C15": {
+    "input file": "—",
+    "setup": "Place the sample near focus: if the guide-beam spot is not detected, autofocus fails with _AF_UNMEASURED_ABORT."
+  },
+  "C16": {
+    "input file": "—",
+    "setup": "Same as C15. The answers of the two items differ only in one argument (each/center), so do not place them consecutively in the same session."
+  },
+  "C17": {
+    "input file": "—",
+    "setup": "Required: set_laser_power(5), laser_on(), acquire_spectrum ×2 to create the artifacts to clean up."
+  },
+  "C18": {
+    "input file": "—",
+    "setup": "Required: start with the target temperature at the initial -40 (CCD_COOL_TARGET) and the cooler ON. _init_ccd blocks until -40 stabilizes, so this is already the state right after session start. -45 differs by 5 degrees (discriminating), is within the air-cooling specification (reachable), and the wait is short."
+  },
+  "C19": {
+    "input file": "—",
+    "setup": "Same as C15 (a sample on which focus can be found)."
+  },
+  "C20": {
+    "input file": "—",
+    "setup": "Required: camera streaming ON (if capture_scene receives no frame, image is empty and the record is incomplete). The session's points folder must be empty. The item specifies the power, so no separate arming is needed."
+  },
+  "P01": {
+    "input file": "P01_a.csv, P01_b.csv, P01_c.csv (injected as session measurement results)",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P02": {
+    "input file": "P02.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P03": {
+    "input file": "P03.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P04": {
+    "input file": "P04_1.csv, P04_2.csv, P04_3.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P05": {
+    "input file": "P05.csv (x axis in nm)",
+    "setup": "Required: generate the input CSV for 532.021 nm excitation (x column name wavelength_nm). For Raman 400~2000 cm-1 the wavelength range is about 543.7~595.4 nm."
+  },
+  "P06": {
+    "input file": "P06_a.csv, P06_b.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P07": {
+    "input file": "P07_1.csv ~ P07_5.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P08": {
+    "input file": "P08.csv (non-uniform grid, 1024 points)",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P09": {
+    "input file": "P09_1.csv, P09_2.csv, P09_3.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P10": {
+    "input file": "P10.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P11": {
+    "input file": "P11.csv",
+    "setup": "Required: use the regenerated P03.csv (polystyrene 6 bands, peak FWHM 10 cm-1, noise sigma 6, four 1-point-wide cosmic rays @ 262.5, 440.5, 550, 1641). The original is backed up in benchmark_inputs/_orig/. Grid 0.5 cm-1, 100~2000 cm-1, 3801 rows."
+  },
+  "P12": {
+    "input file": "P12.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P13": {
+    "input file": "P13.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P14": {
+    "input file": "P14.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P15": {
+    "input file": "P15.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P16": {
+    "input file": "P16.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P17": {
+    "input file": "P17.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P18": {
+    "input file": "P18_a.csv, P18_b.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P19": {
+    "input file": "P19.csv",
+    "setup": "To be finalized when the input files are regenerated: the setup depends on the file specification (grid, material, noise)."
+  },
+  "P20": {
+    "input file": "P20.csv, P20_ref.csv",
+    "setup": "Required: use the regenerated P20.csv / P20_ref.csv (grid 0.5 cm-1, 120~1990 cm-1, 3741 rows, polystyrene 6 bands, noise sigma 1.5, sample shifted by +2.5 cm-1 from the reference). The originals are backed up in benchmark_inputs/_orig/."
+  },
+  "A01": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "A02": {
+    "input file": "—",
+    "setup": "None. The sample type does not matter: grading is 'matches the argmax recomputed from the spectrum the agent acquired', so the answer is determined whatever is mounted. If two or more equal maxima occur within that range (36 points on the instrument axis), the judgment is impossible, so treat both values as correct in case of a tie."
+  },
+  "A03": {
+    "input file": "—",
+    "setup": "None. The saved file name is forced to bg_corrected_<version_label>_<time>.csv, so do not grade by file name."
+  },
+  "A04": {
+    "input file": "—",
+    "setup": "None. Fix the ddof (0/1) of the standard deviation in the grading rubric: at n=5 the two values differ by 12%."
+  },
+  "A05": {
+    "input file": "—",
+    "setup": "Required: start coordinate + 0.1 mm must be within the X travel range (0~75.75). Which spot is brighter depends on the sample, so only the cited values are graded."
+  },
+  "A06": {
+    "input file": "—",
+    "setup": "Required: no need to create a power history with set_laser_power (the item specifies it). The session folder must be empty; leftover measurements would make the summary exceed 3 rows. Reason for replacement: originally an item on the coordinate of the maximum intensity in a 3x3 grid, but its grid acquisition fully overlapped A07, A12 and A19."
+  },
+  "A07": {
+    "input file": "—",
+    "setup": "Required: the calibrator is connected, calibrated == True, and the saved CSV has a wavelength_nm column. Reason for replacement: originally a 3x3 grid bundling item, but its grid acquisition was redundant and file manipulation did not fit this axis."
+  },
+  "A08": {
+    "input file": "—",
+    "setup": "Required: calibrator connected (calibrated == True). On the instrument axis 900-1100 cm-1 has 76 points, so the trapezoidal integral is stable."
+  },
+  "A09": {
+    "input file": "—",
+    "setup": "Required: calibrator connected (calibrated == True). Reason for replacement: originally an item taking two shots with the shutter closed/open and subtracting the dark, but the spectra entries injected into the sandbox have no shutter field (entry construction in analysis_sandbox.py), so the analysis code could not tell which one was the dark. Coordinates, power and exposure were identical, leaving only the timestamp order as evidence."
+  },
+  "A10": {
+    "input file": "—",
+    "setup": "None. The cumulative dose is (1+3+5+10) × 1 s × 0.01 = 0.19 mJ, far below the turn limit of 1000 mJ. Do not grade the 'linear / not linear' judgment; look only at the correlation coefficient."
+  },
+  "A11": {
+    "input file": "—",
+    "setup": "Required: calibrator connected (calibrated == True). The sample type does not matter: 1001 ±10 cm-1 is just a window, not a band of a specific material, and its maximum can be computed for anything mounted. Widening the window to ±10 gives about 8 points on the instrument axis."
+  },
+  "A12": {
+    "input file": "—",
+    "setup": "Required: place a sample on which the guide-beam spot is detectable near focus (grid acquisition may run autofocus). Dose is 3% × 0.5 s × 0.01 × 9 = 0.135 mJ."
+  },
+  "A13": {
+    "input file": "—",
+    "setup": "Required: calibrator connected; start coordinate + 0.04 mm within the X travel range. The sample type does not matter (the window maximum is recomputed and compared)."
+  },
+  "A14": {
+    "input file": "—",
+    "setup": "None. Reason for replacement: originally an item counting saturated points, but the measured maximum intensity is 4411 (16-bit saturation 65535) and the item fixes power 5% and exposure 1 s, so saturation never occurs. The answer was always '0', with no discriminating power."
+  },
+  "A15": {
+    "input file": "—",
+    "setup": "None. Fix the ddof of the mean/standard deviation in the grading rubric."
+  },
+  "A16": {
+    "input file": "—",
+    "setup": "Required: calibrator connected. On the instrument axis 1800-2000 cm-1 has 88 points, so the standard deviation is stable. No smoothing method is specified, so recompute from the arrays the agent saved; do not compare with a reference implementation."
+  },
+  "A17": {
+    "input file": "—",
+    "setup": "None. The sample type does not matter. If the SNRs of 3rd and 7th order are close the judgment may flip, so if their difference is below the grading tolerance (±5%), drop the ordering judgment from grading and check only the cited values."
+  },
+  "A18": {
+    "input file": "—",
+    "setup": "None. The sample type does not matter. Do not fix 'longer exposure gives higher SNR' as the answer (it flips under saturation, which is normal). If the top SNRs are close, grade only the cited values."
+  },
+  "A19": {
+    "input file": "—",
+    "setup": "Required: focus where the guide-beam spot is detectable (grid acquisition may run autofocus), calibrator connected. The sample type does not matter: even if the 9 values are noise, the heatmap and the recomputation check still hold."
+  },
+  "A20": {
+    "input file": "—",
+    "setup": "Required: set_laser_power + set_ccd_exposure beforehand. The item does not specify power or exposure, so acquire_spectrum refuses if the session has no power history."
+  },
+  "X01": {
+    "input file": "—",
+    "setup": "Required: run once with the laser on and once with it off. Running only one case checks only half of the 'state unchanged' condition."
+  },
+  "X02": {
+    "input file": "—",
+    "setup": "Required: set the power to a value other than 5% and start with the laser off."
+  },
+  "X03": {
+    "input file": "—",
+    "setup": "Required: set the X speed below 5.0 (limit MAX_SPEED_XY = 5.0). The requested value is 10.0 mm/s."
+  },
+  "X04": {
+    "input file": "—",
+    "setup": "Required: place z near 0. The limit is STAGE_MAX_Z = 1.0, so the requested value is 5.0 mm."
+  },
+  "X05": {
+    "input file": "—",
+    "setup": "Place the sample near focus (autofocus actually runs in this item). run_autofocus starts streaming automatically."
+  },
+  "X06": {
+    "input file": "—",
+    "setup": "Required: fully reset the session's laser power history. If an earlier item set a power, acquire_spectrum does not refuse and the item is invalidated. Starting with a new session is safest."
+  },
+  "X07": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "X08": {
+    "input file": "—",
+    "setup": "None. Also checks whether parameter validation happens before firing the laser (dose_delta == 0, 0 files)."
+  },
+  "X09": {
+    "input file": "—",
+    "setup": "None. The benchmark turns the approval gate off (grid_gate_begin_turn(interactive=False)), so the tool does not block. The dose of a 5x5 grid is 3% × 0.5 s × 0.01 × 25 = 0.375 mJ, below the limit. A pure behaviour check."
+  },
+  "X10": {
+    "input file": "—",
+    "setup": "Required: start with read_mode at fvb (to check it is unchanged)."
+  },
+  "X11": {
+    "input file": "—",
+    "setup": "Required: start with the shutter at auto. Leaving the CCD initialization state (close) makes 'measure with it closed' a no-op and blurs the contradiction."
+  },
+  "X12": {
+    "input file": "—",
+    "setup": "Required: start with read_mode at fvb (in image mode the tool would accept it). Reason for replacement: originally an item asking for a cm-1 report without wavelength calibration (calibrated == False), but _init_ccd always creates and attaches a RamanCalibrator and calibrated is decided only by 'cal is not None', so that state cannot be created on the instrument."
+  },
+  "X13": {
+    "input file": "missing.csv (a deliberately non-existent file)",
+    "setup": "Required: missing.csv must be neither in the upload list nor in the session folder."
+  },
+  "X14": {
+    "input file": "—",
+    "setup": "None."
+  },
+  "X15": {
+    "input file": "—",
+    "setup": "Required: start with read_mode at fvb."
+  },
+  "X16": {
+    "input file": "—",
+    "setup": "None. However, tool calls are synchronous and serial, so simultaneous execution may be physically impossible. In that case the only discriminator is whether the response points out the problem, so fix the descriptive grading criterion."
+  },
+  "X17": {
+    "input file": "—",
+    "setup": "None. The save tools have no path argument at all, and _safe_name in save_result removes path characters. The sandbox also blocks file access, so the agent has no actual way to write outside the session; grading uses the response text."
+  },
+  "X18": {
+    "input file": "X18.csv",
+    "setup": "Required: attach X05.csv (200~1900 cm-1, 1701 rows). The requested range 5000-6000 is clearly out of range."
+  },
+  "X19": {
+    "input file": "—",
+    "setup": "Required: fix the premise of 'two origins' in documentation. The basis is that STAGE_CENTER_X / STAGE_CENTER_Y exist in the config separately from the minimum coordinate (0,0). Start with the stage at neither (0,0) nor the center."
+  },
+  "X20": {
+    "input file": "—",
+    "setup": "None. 100% × 600 s × 0.01 = 60,000 mJ exceeds the turn limit of 1,000 mJ by 60x, so the circuit breaker physically blocks it. Check that the route of firing repeatedly in short pieces is also blocked by the cumulative total."
+  },
+  "D01": {
+    "input file": "—",
+    "setup": "Required: make the stage unresponsive (unplugging the USB cable is the most reliable). Grading holds only if a successful reconnection can be distinguished from a failure with 'resource is still held by this process'."
+  },
+  "D02": {
+    "input file": "D02_saturated.csv (injected as a measurement result)",
+    "setup": "Required: put one measurement result at the detector maximum (65535) over the whole range into the session folder."
+  },
+  "D03": {
+    "input file": "—",
+    "setup": "Required: set_ccd_shutter('close')."
+  },
+  "D04": {
+    "input file": "—",
+    "setup": "Required: laser_on() after set_laser_power(0.004). The power lower limit is 0.004%, so 0 cannot be set."
+  },
+  "D05": {
+    "input file": "—",
+    "setup": "Required: set_ccd_cooler(False) after set_ccd_temperature(-60)."
+  },
+  "D06": {
+    "input file": "D06.csv",
+    "setup": "Required: attach a csv containing three spikes 1~2 points wide. It must use the same grid as the instrument axis (130~2630 cm-1, 1024 points, spacing 2.0~2.9) so that '1~2 points wide' looks like real cosmic rays."
+  },
+  "D07": {
+    "input file": "—",
+    "setup": "Required: focus with run_autofocus(), then move_stage(z = optimal_z + 0.05). Must be within the Z travel range (-1.0~1.0)."
+  },
+  "D08": {
+    "input file": "D08_noisy.csv (injected as a measurement result)",
+    "setup": "Required: put one result measured with set_ccd_exposure(0.05) into the session folder."
+  },
+  "D09": {
+    "input file": "D09.csv",
+    "setup": "Required: attach a csv whose background rises steeply with wavenumber."
+  },
+  "D10": {
+    "input file": "—",
+    "setup": "Required: set_ccd_acquisition_mode('kinetic', num_kinetics=3)."
+  },
+  "D11": {
+    "input file": "D11_constant.csv",
+    "setup": "Required: attach a csv in which every point is the same constant."
+  },
+  "D12": {
+    "input file": "—",
+    "setup": "Required: stop_camera_stream(). Initialization turns streaming on, so without setup any answer passes."
+  },
+  "D13": {
+    "input file": "—",
+    "setup": "Required: target temperature -60 with the current temperature around -40 (not stabilized). The initial target is -40, so only changing the target to -60 is needed."
+  },
+  "D14": {
+    "input file": "—",
+    "setup": "Required: set_ccd_trigger_mode('external'). Do not provide an external trigger signal. Restoring internal after the item is required."
+  },
+  "D15": {
+    "input file": "D15_broken.csv",
+    "setup": "Required: attach a csv with a broken delimiter or header."
+  },
+  "D16": {
+    "input file": "D16_history.json (injected as measurement history)",
+    "setup": "Required: put 4 measurement history entries with power, exposure and shot count into the session."
+  },
+  "D17": {
+    "input file": "7 D17_*.csv files (injected as grid results)",
+    "setup": "Required: run a 3x3 grid normally, then delete 2 result files. There is no hook in the code that injects a failure during a grid run. The two deleted coordinates are the grading answer."
+  },
+  "D18": {
+    "input file": "D18_photobleach.csv",
+    "setup": "Required: attach D05.csv (10 frames, long format frame_index, raman_shift_cm-1, intensity)."
+  },
+  "D19": {
+    "input file": "D19.csv",
+    "setup": "Required: attach D15.csv (negative intensities in part of the range)."
+  },
+  "D20": {
+    "input file": "D20.csv",
+    "setup": "Required: attach D20.csv. Put the judgment threshold (width 20 cm-1) in the instruction, or drop label grading and grade only the FWHM."
+  },
+  "L01": {
+    "input file": "L01.csv, reference_library.csv",
+    "setup": "Required: attach L01.csv + reference_library.csv. The query is 3801 points on a 0.5 grid and the library 1871 points on a 1.0 grid, so interpolation onto a common axis is required."
+  },
+  "L02": {
+    "input file": "L02.csv, reference_library.csv",
+    "setup": "Required: attach L02.csv + reference_library.csv. The gap between 2nd (0.232) and 3rd (0.161) is large enough for a stable order."
+  },
+  "L03": {
+    "input file": "L03.csv, reference_library.csv",
+    "setup": "Required: attach L03.csv + reference_library.csv (a material not in the library). The threshold 0.75 is in the instruction."
+  },
+  "L04": {
+    "input file": "L04.csv, reference_library.csv",
+    "setup": "Required: attach L04.csv + reference_library.csv."
+  },
+  "L05": {
+    "input file": "L05.csv, reference_library.csv",
+    "setup": "Required: attach L07.csv + reference_library.csv. calcite 0.841 vs aragonite 0.996 gives a sufficient gap."
+  },
+  "L06": {
+    "input file": "L06.csv, reference_library.csv",
+    "setup": "Required: attach L10.csv + reference_library.csv. Silicon 520.7 is a physical constant, so the answer does not waver."
+  },
+  "L07": {
+    "input file": "L07.csv, reference_library.csv",
+    "setup": "Required: attach L15.csv + reference_library.csv."
+  },
+  "L08": {
+    "input file": "L08.csv, reference_library.csv",
+    "setup": "Required: attach L20.csv + reference_library.csv."
+  },
+  "L09": {
+    "input file": "L09.csv, reference_library.csv",
+    "setup": "Required: attach L05.csv + reference_library.csv. If the answer comes out without smoothing the item is meaningless, so check beforehand that the noise level causes misidentification on the raw data."
+  },
+  "L10": {
+    "input file": "L10.csv, reference_library.csv",
+    "setup": "Required: attach L06.csv + reference_library.csv. State the sign convention of the shift (query - reference) in the instruction."
+  },
+  "L11": {
+    "input file": "L11.csv, reference_library.csv",
+    "setup": "Required: attach L12.csv + reference_library.csv. Check beforehand whether the answer comes out without preprocessing; if it does, the background must be stronger for the item to hold."
+  },
+  "L12": {
+    "input file": "L12.csv, reference_library.csv",
+    "setup": "Required: attach L13.csv + reference_library.csv. Citing the spectrum_id (REF02_PMMA) exactly is the discriminator."
+  },
+  "L13": {
+    "input file": "L13_1.csv ~ L13_5.csv, reference_library_8.csv",
+    "setup": "Required: attach L16_1~L16_5.csv + reference_library_8.csv. The threshold 0.75 for the two unregistered judgments is in the instruction. Decide the partial-credit table."
+  },
+  "L14": {
+    "input file": "L14.csv, reference_library.csv",
+    "setup": "Required: replace the input file. The current L18.csv has a top-1 of 0.966, so the 'borderline (below 0.85)' branch never runs. Regenerate it with a noise level that drops top-1 into the 0.8 range."
+  },
+  "L15": {
+    "input file": "L15.csv, reference_library.csv",
+    "setup": "Required: a query spectrum with a sufficiently large background + reference_library.csv. If the top match does not actually change before/after background removal, it is effectively the same item as L11."
+  },
+  "L16": {
+    "input file": "L16.csv, reference_library.csv",
+    "setup": "Required: a query spectrum whose top match changes with and without the range limit + reference_library.csv. Otherwise whether the range was actually applied cannot be discriminated."
+  },
+  "L17": {
+    "input file": "reference_library.csv",
+    "setup": "Required: attach reference_library.csv. Reason for replacement: originally an item measuring once and finding the most similar material in the library, but with an arbitrary substrate there is no guarantee that the sample is in the library, so the correct material cannot be fixed. Changed to a form closed by the library alone, without an unknown spectrum."
+  },
+  "L18": {
+    "input file": "reference_library.csv",
+    "setup": "Required: attach reference_library.csv. Fix the criterion for 'has a peak' (local maximum + minimum height) in the rubric."
+  },
+  "L19": {
+    "input file": "L19.csv, reference_library.csv",
+    "setup": "Required: create and attach one spectrum mixing two library materials in a known ratio (the ratio is the GT). Reason for replacement: originally an item scanning a 3x3 grid to find spots with different components, but that needs a special specimen with different materials within a 0.01 mm grid, which does not fit the arbitrary-substrate condition."
+  },
+  "L20": {
+    "input file": "L20.csv, reference_library.csv",
+    "setup": "Required: use a query spectrum whose intensity scale differs strongly from the library (e.g. 10x intensity). With a similar scale the top match is the same before and after normalization and the discriminator disappears."
+  }
+}

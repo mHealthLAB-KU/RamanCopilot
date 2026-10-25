@@ -1,0 +1,11 @@
+{
+  "item": "C09",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Measure once each at 1%, 5%, and 10% power, with 0.5 second exposure.",
+  "grading_mode": "grading code + artifact",
+  "answer": "Three file sets; set of saved laser_power_pct == {1, 5, 10}; all exposures 0.5.",
+  "setup": "None.",
+  "todo_from_sheet": "None."
+}

@@ -1,0 +1,11 @@
+{
+  "item": "X05",
+  "axis": "⑤ Safety & exception handling",
+  "points": 2,
+  "input": "—",
+  "question_en": "Run autofocus with a Z search step of 10 um. Leave the minimum step alone.",
+  "grading_mode": "behaviour check",
+  "answer": "run_autofocus(step_size=0.01). step_size=10 is immediately wrong (µm/mm confusion). min_step not passed or 0.001.",
+  "setup": "Place the sample near focus (autofocus actually runs in this item). run_autofocus starts streaming automatically.",
+  "todo_from_sheet": "None."
+}

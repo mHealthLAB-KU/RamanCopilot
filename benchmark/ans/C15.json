@@ -1,0 +1,12 @@
+{
+  "item": "C15",
+  "axis": "② Compound operation",
+  "points": 3,
+  "input": "—",
+  "question_en": "Make the scan refocus at every point: 3x3 at 0.01 mm spacing, 3% power, 0.5 second exposure, from the current stage position. Preview first, then run it.",
+  "grading_mode": "behaviour check",
+  "answer": "run_grid_scan argument autofocus == 'each', preview first.",
+  "setup": "Place the sample near focus: if the guide-beam spot is not detected, autofocus fails with _AF_UNMEASURED_ABORT.",
+  "todo_from_sheet": "None.",
+  "overlap": "Differs from C16 only in the autofocus argument ('each' vs 'center')."
+}

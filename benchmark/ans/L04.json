@@ -1,0 +1,40 @@
+{
+  "item": "L04",
+  "inputs": [
+    "L04.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "dominant": "polystyrene",
+    "candidates": [
+      "polystyrene",
+      "PMMA"
+    ],
+    "scores": [
+      0.9331,
+      0.4247
+    ]
+  },
+  "margin": {
+    "cos_centered": {
+      "top1": "polystyrene",
+      "score": 0.9331,
+      "top2": "PMMA",
+      "gap": 0.5085
+    },
+    "cos_raw": {
+      "top1": "polystyrene",
+      "score": 0.9381,
+      "top2": "PMMA",
+      "gap": 0.4527
+    },
+    "cos_minmax": {
+      "top1": "polystyrene",
+      "score": 0.9331,
+      "top2": "PMMA",
+      "gap": 0.5085
+    }
+  },
+  "tolerance": "Material names of the dominant component and the runner-up match. Score ±0.06.",
+  "overlap": "Overlaps in topic with L19 (quantifying the mixing ratio). The discriminator of L04 is the \"dominant component\" and that of L19 the \"ratio\", so do not ask them in the same session."
+}

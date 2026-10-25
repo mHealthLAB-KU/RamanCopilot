@@ -1,0 +1,30 @@
+{
+  "item": "D17",
+  "kind": "inject grid results",
+  "setup": "Inject the 7 files below as this session's grid scan results. The 3x3 grid is x in {37.800, 37.900, 38.000} x y in {25.200, 25.300, 25.400}, with the center (37.900, 25.300) and (38.000, 25.400) missing.",
+  "inputs": [
+    "D17_181107_137_x37.800_y25.200.csv",
+    "D17_181214_274_x37.900_y25.200.csv",
+    "D17_181321_411_x38.000_y25.200.csv",
+    "D17_181428_548_x37.800_y25.300.csv",
+    "D17_181535_685_x38.000_y25.300.csv",
+    "D17_181642_822_x37.800_y25.400.csv",
+    "D17_181749_959_x37.900_y25.400.csv"
+  ],
+  "answer": {
+    "n_expected": 9,
+    "n_present": 7,
+    "missing_points": [
+      {
+        "x": 37.9,
+        "y": 25.3
+      },
+      {
+        "x": 38.0,
+        "y": 25.4
+      }
+    ]
+  },
+  "grading": "list_results called + the identified missing coordinates match the 2 points above as a set (±0.001).",
+  "blocker": "There is no harness hook that injects a failure in the middle of a grid. The situation is reproduced by putting these 7 files in the session."
+}

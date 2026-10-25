@@ -1,0 +1,10 @@
+{
+  "setup": "Focus with run_autofocus(), then move_stage(z = optimal_z + 0.05). Must be within the Z travel range -1.0~1.0.",
+  "answer": [
+    "Defocus identified as the cause",
+    "run_autofocus re-run",
+    "After running, stage z == returned optimal_z (1e-6)"
+  ],
+  "item": "D07",
+  "kind": "hardware state setup (no input file)"
+}

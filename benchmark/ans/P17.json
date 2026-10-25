@@ -1,0 +1,12 @@
+{
+  "item": "P17",
+  "input": "P17.csv",
+  "expected_file": "P17_expected.csv",
+  "answer": {
+    "n_rows": 801,
+    "first_shift": 800.0,
+    "last_shift": 1200.0
+  },
+  "grading": "Row count == 801, values match a subset of the corresponding original rows within rtol 1e-6. Interpolation is wrong (both end points are on the grid, so there is no reason to interpolate).",
+  "tolerance": "rtol 1e-6"
+}

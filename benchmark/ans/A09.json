@@ -1,0 +1,12 @@
+{
+  "item": "A09",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, extract the 800-1200 cm-1 region, save it, and plot the extracted region.",
+  "grading_mode": "grading code + artifact",
+  "answer": "requires: calibrated == True. Every raman_shift in the saved CSV is between 800 and 1200 inclusive, and the row count and values match that range of the acquired spectrum (1e-6). Any interpolation or resampling is wrong. One plot.",
+  "setup": "Required: calibrator connected (calibrated == True). Reason for replacement: originally an item taking two shots with the shutter closed/open and subtracting the dark, but the spectra entries injected into the sandbox have no shutter field (entry construction in analysis_sandbox.py), so the analysis code could not tell which one was the dark. Coordinates, power and exposure were identical, leaving only the timestamp order as evidence.",
+  "todo_from_sheet": "On the instrument axis (130~2630 cm-1, 1024 points) this range has about 120 points, which is enough. save_result normalizes the saved file name, so do not use it for grading.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

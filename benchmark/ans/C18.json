@@ -1,0 +1,12 @@
+{
+  "item": "C18",
+  "axis": "② Compound operation",
+  "points": 3,
+  "input": "—",
+  "question_en": "Cool the CCD to a target of -45 degrees, and once the temperature is stable take one measurement at 5% power and 1 second exposure.",
+  "grading_mode": "state check + grading code",
+  "answer": "set_ccd_temperature(-45) + set_ccd_cooler(True) first. At acquisition time |current temperature - (-45)| <= 2. One file set; saved JSON exposure_time == 1.0, laser_power_pct ≈ 5.",
+  "setup": "Required: start with the target temperature at the initial -40 (CCD_COOL_TARGET) and the cooler ON. _init_ccd blocks until -40 stabilizes, so this is already the state right after session start. -45 differs by 5 degrees (discriminating), is within the air-cooling specification (reachable), and the wait is short.",
+  "todo_from_sheet": "Fix the definition of 'stable' as either target ±2 degrees or the stabilization code of get_ccd_info().temperature_status. The two criteria can disagree.",
+  "issue": "\"Once the temperature is stable\" has two definitions (target ±2 degrees / temperature_status code). Fix it to the single grading criterion |current - (-45)| <= 2."
+}

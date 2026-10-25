@@ -1,0 +1,34 @@
+{
+  "item": "L16",
+  "inputs": [
+    "L16.csv",
+    "reference_library.csv"
+  ],
+  "region": [
+    400.0,
+    1800.0
+  ],
+  "answer": {
+    "material": "calcite",
+    "spectrum_id": "REF04_calcite"
+  },
+  "margin": {
+    "top match using 400-1800 only": [
+      "calcite",
+      0.9977
+    ],
+    "runner-up using 400-1800 only": [
+      "aragonite",
+      0.9323
+    ],
+    "gap within the range": 0.0653,
+    "top match using the whole range": [
+      "aragonite",
+      0.9394
+    ],
+    "top match agrees across 3 metrics (range)": true,
+    "top match agrees across 3 metrics (whole range)": true
+  },
+  "tolerance": "material name match + the range argument passed to matching is 400-1800",
+  "design": "The 120-400 range was filled with aragonite and the range above 400 with calcite. Without the range aragonite ranks first, with it calcite; the answer reveals whether the range argument was actually passed."
+}

@@ -1,0 +1,17 @@
+{
+  "item": "D08",
+  "kind": "inject session measurement results",
+  "setup": "Inject D08_noisy.csv as the previous measurement result (exposure 0.05 s, power 30%, 1 accumulation).",
+  "input": "D08_noisy.csv",
+  "answer": {
+    "cause": "Under-exposure (0.05 s)",
+    "action": "Re-measurement with exposure_time > 0.05 or num_accumulations > 1"
+  },
+  "detail": {
+    "snr_ddof1": 14.668,
+    "noise_std_1800_2000": 90.006,
+    "max_intensity": 1320.171
+  },
+  "grading": "Insufficient exposure/accumulation mentioned as the cause + re-measurement parameters satisfy one of the conditions above.",
+  "note": "Raising only the power also increases the signal, but risks sample damage, so proposing exposure/accumulation first is preferable. Grading checks only the conditions above."
+}

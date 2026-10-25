@@ -1,0 +1,11 @@
+{
+  "item": "C12",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "I want to scan a 3x3 grid at 0.01 mm spacing centered on the current stage position. Show me where it would measure first. Do not run it.",
+  "grading_mode": "behaviour check + state check",
+  "answer": "preview_grid_scan(rows=3, cols=3, spacing_mm=0.01) called. tool_not_called: [run_grid_scan, acquire_spectrum]. Coordinates unchanged, one preview image.",
+  "setup": "None. The benchmark turns the approval gate off (grid_gate_begin_turn(interactive=False)), so the tool does not block; judged only by tool_not_called.",
+  "todo_from_sheet": "None."
+}

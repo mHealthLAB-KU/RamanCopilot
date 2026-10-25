@@ -1,0 +1,12 @@
+{
+  "item": "C16",
+  "axis": "② Compound operation",
+  "points": 3,
+  "input": "—",
+  "question_en": "The sample is flat, so focus only once at the center of the grid: 3x3 at 0.01 mm spacing, 3% power, 0.5 second exposure, from the current stage position. Preview first, then run it.",
+  "grading_mode": "behaviour check",
+  "answer": "run_grid_scan argument autofocus == 'center', preview first.",
+  "setup": "Same as C15. The answers of the two items differ only in one argument (each/center), so do not place them consecutively in the same session.",
+  "todo_from_sheet": "Only the answer argument differs from C15. Do not place the two items consecutively in the same session.",
+  "overlap": "Differs from C15 only in the autofocus argument."
+}

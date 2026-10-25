@@ -1,0 +1,5 @@
+{
+ "prompts": [
+  "Starting from the current field of view, determine the visual characteristics of the polystyrene particles and the laser power and exposure time at which they undergo irreversible change. Report the characteristics, the threshold conditions and evidence for them, and the highest safe laser power and exposure time, including the number of accumulations if you used more than one."
+ ]
+}

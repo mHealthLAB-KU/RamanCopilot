@@ -1,0 +1,11 @@
+{
+  "item": "S03",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Set the CCD exposure time to 2 seconds. Do not take a measurement.",
+  "grading_mode": "state check",
+  "answer": "exposure_time_s == 2.0 (1e-6). acquire_spectrum not called.",
+  "setup": "Set the exposure to a value other than 2.0 (the initial value is inherited from the previous session and undetermined).",
+  "todo_from_sheet": "None."
+}

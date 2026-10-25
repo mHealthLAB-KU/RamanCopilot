@@ -1,0 +1,19 @@
+{
+  "item": "P16",
+  "input": "P16.csv",
+  "answer": {
+    "area_990_1012": 12385.3323,
+    "n_points": 45,
+    "first_x": 990.0,
+    "last_x": 1012.0
+  },
+  "rubric": "Trapezoidal integral including both ends. Both end points lie on the grid, so no interpolation is needed.",
+  "margin": {
+    "trapezoidal": 12385.3323,
+    "rectangular (sum*0.5)": 12434.3484,
+    "Simpson": 12387.183,
+    "maximum deviation due to integration method": "0.3958%"
+  },
+  "tolerance": "+-2%",
+  "design": "Zero background, both end points on the grid (990.0 / 1012.0), and the only peak in the range is 1001. Changing the integration method changes the value by less than 0.3958%."
+}

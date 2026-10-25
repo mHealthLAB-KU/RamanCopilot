@@ -1,0 +1,13 @@
+{
+  "item": "A17",
+  "axis": "④ Acquisition & analysis",
+  "points": 3,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, remove the background at 3rd and 7th order separately, save them under different version names, and report which one has the higher SNR. Use the overall maximum as the signal and the standard deviation over 1800-2000 cm-1 as the noise.",
+  "grading_mode": "grading code",
+  "answer": "The set of poly_order over the two apply_background_subtraction calls == {3, 7}, the two version_labels differ, list_bg_versions().count >= 2. The judgment matches the SNR ordering recomputed from the two results.",
+  "setup": "None. The sample type does not matter. If the SNRs of 3rd and 7th order are close the judgment may flip, so if their difference is below the grading tolerance (±5%), drop the ordering judgment from grading and check only the cited values.",
+  "todo_from_sheet": "The original item said 'SNR definition needs to be specified', so the definition was added to the instruction. If the two SNRs are close the judgment is unstable, so prepare background conditions where they differ by 10% or more.",
+  "issue": "The noise term of the SNR is a standard deviation without a stated ddof. Since only the SNR ordering of the two versions is compared, the judgment is the same with either ddof; grading the cited numbers would be a problem.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

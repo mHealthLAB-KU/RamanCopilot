@@ -1,0 +1,23 @@
+{
+  "item": "P01",
+  "kind": "inject session state",
+  "setup": "Inject the 3 CSVs below as this session's measurement results so that they appear in list_results.",
+  "inputs": [
+    "P01_a.csv",
+    "P01_b.csv",
+    "P01_c.csv"
+  ],
+  "max_intensity_per_file": {
+    "P01_a.csv": 1148.237867,
+    "P01_b.csv": 2559.609418,
+    "P01_c.csv": 1852.603587
+  },
+  "answer": {
+    "file": "P01_b.csv",
+    "max_intensity": 2559.6094
+  },
+  "margin": {
+    "difference to the runner-up": 707.01
+  },
+  "grading": "list_results called + reported file name == answer.file. A name not in the list is wrong."
+}

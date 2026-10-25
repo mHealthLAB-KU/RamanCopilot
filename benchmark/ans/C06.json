@@ -1,0 +1,11 @@
+{
+  "item": "C06",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "With the shutter closed, take one dark frame at 5% power and 1 second exposure.",
+  "grading_mode": "state check + artifact",
+  "answer": "One file set; shutter == 'close' in the saved JSON.",
+  "setup": "None. Even if the initial shutter is close, _effective_shutter opens it to auto when shutter_explicit=False, so the result is a dark frame only if the agent explicitly specifies close (discriminating).",
+  "todo_from_sheet": "Fix the definition of dark as 'shutter close'. If written as 'laser off', acquire_spectrum turns the laser on atomically and the judgment does not hold."
+}

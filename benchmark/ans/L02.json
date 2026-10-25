@@ -1,0 +1,66 @@
+{
+  "item": "L02",
+  "inputs": [
+    "L02.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "top3": [
+      {
+        "material": "polystyrene",
+        "spectrum_id": "REF05_polystyrene",
+        "score": 0.9981
+      },
+      {
+        "material": "PET",
+        "spectrum_id": "REF01_PET",
+        "score": 0.1481
+      },
+      {
+        "material": "PMMA",
+        "spectrum_id": "REF02_PMMA",
+        "score": 0.0754
+      }
+    ]
+  },
+  "margin": {
+    "the order agrees across the three metrics": true,
+    "order per metric": {
+      "cos_centered": [
+        "polystyrene",
+        "PET",
+        "PMMA"
+      ],
+      "cos_raw": [
+        "polystyrene",
+        "PET",
+        "PMMA"
+      ],
+      "cos_minmax": [
+        "polystyrene",
+        "PET",
+        "PMMA"
+      ]
+    },
+    "score per metric": {
+      "cos_centered": [
+        0.9981,
+        0.1481,
+        0.0754
+      ],
+      "cos_raw": [
+        0.9982,
+        0.2305,
+        0.1592
+      ],
+      "cos_minmax": [
+        0.9981,
+        0.1481,
+        0.0754
+      ]
+    },
+    "maximum score deviation": 0.0838
+  },
+  "tolerance": "Order must match. Score ±0.09 (covers the metric deviation of 0.0838)",
+  "issue": "With a score tolerance of ±0.01, switching the metric deviates by 0.0838. Grade only the order or widen the tolerance."
+}

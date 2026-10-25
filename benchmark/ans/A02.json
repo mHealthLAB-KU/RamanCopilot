@@ -1,0 +1,12 @@
+{
+  "item": "A02",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, and report the shift in cm-1 of the strongest point within 500-600 cm-1, endpoints included.",
+  "grading_mode": "grading code",
+  "answer": "requires: calibrated == True and at least 2 points in the range. After cutting to 500 <= shift <= 600, matches the shift of the intensity argmax row.",
+  "setup": "None. The sample type does not matter: grading is 'matches the argmax recomputed from the spectrum the agent acquired', so the answer is determined whatever is mounted. If two or more equal maxima occur within that range (36 points on the instrument axis), the judgment is impossible, so treat both values as correct in case of a tie.",
+  "todo_from_sheet": "None.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

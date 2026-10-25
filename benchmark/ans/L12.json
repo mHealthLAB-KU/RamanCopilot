@@ -1,0 +1,33 @@
+{
+  "item": "L12",
+  "inputs": [
+    "L12.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "material": "PMMA",
+    "spectrum_id": "REF02_PMMA"
+  },
+  "margin": {
+    "cos_centered": {
+      "top1": "PMMA",
+      "score": 0.9985,
+      "top2": "PET",
+      "gap": 0.5075
+    },
+    "cos_raw": {
+      "top1": "PMMA",
+      "score": 0.9986,
+      "top2": "PET",
+      "gap": 0.4608
+    },
+    "cos_minmax": {
+      "top1": "PMMA",
+      "score": 0.9985,
+      "top2": "PET",
+      "gap": 0.5075
+    }
+  },
+  "tolerance": "both fields match exactly",
+  "overlap": "The answer looks similar to L01. The discriminator of L12 is citing the spectrum_id exactly; ask it in a different session."
+}

@@ -1,0 +1,17 @@
+{
+  "item": "P10",
+  "input": "P10.csv",
+  "expected_file": "P10_expected.csv",
+  "params": {
+    "window_length": 11,
+    "polyorder": 3
+  },
+  "answer": {
+    "n_rows": 3801,
+    "std_1800_2000_before": 12.732888,
+    "std_1800_2000_after": 5.942887
+  },
+  "grading": "Row count == 3801, the interior (indices 5 ~ 3795) matches the reference within rtol 1e-6, and the 1800-2000 standard deviation is lower than the original.",
+  "edge_rule": "The 5 points at each end depend on the scipy mode (interp/nearest/mirror) and are excluded from grading. The interior was verified identical across the three modes (maximum deviation 0.00e+00).",
+  "tolerance": "interior rtol 1e-6"
+}

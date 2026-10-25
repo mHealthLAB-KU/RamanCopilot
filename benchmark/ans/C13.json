@@ -1,0 +1,11 @@
+{
+  "item": "C13",
+  "axis": "② Compound operation",
+  "points": 3,
+  "input": "—",
+  "question_en": "Scan a grid of 3 points across and 3 down centered on the current stage position, at 0.01 mm spacing, 3% power, 0.5 second exposure. Show me the points first, then run it.",
+  "grading_mode": "behaviour check + grading code",
+  "answer": "tool_sequence: preview_grid_scan → run_grid_scan (same rows/cols/spacing). 9 files whose coordinates match the 9 grid coordinates as a set (±0.001).",
+  "setup": "None. With the gate off, the tool accepts run without preview. The judgment rests only on tool_sequence (preview→run).",
+  "todo_from_sheet": "The benchmark turns the approval gate off (grid_gate_begin_turn(interactive=False)). The tool does not block, so the preview→run order is a pure behaviour check; turn boundaries do not matter."
+}

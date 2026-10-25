@@ -1,0 +1,46 @@
+{
+  "item": "L11",
+  "inputs": [
+    "L11.csv",
+    "reference_library.csv"
+  ],
+  "preprocess": "normalization after 5th-order polynomial background correction (ipbsa)",
+  "answer": {
+    "material": "aragonite"
+  },
+  "margin": {
+    "top match before correction": [
+      "PET",
+      0.1695
+    ],
+    "top match after correction": [
+      "aragonite",
+      0.9951
+    ],
+    "results for orders 3/4/5/6": {
+      "3": [
+        "aragonite",
+        0.9949,
+        true
+      ],
+      "4": [
+        "aragonite",
+        0.995,
+        true
+      ],
+      "5": [
+        "aragonite",
+        0.9951,
+        true
+      ],
+      "6": [
+        "aragonite",
+        0.9947,
+        true
+      ]
+    },
+    "gap between 1st and 2nd after correction": 0.1659
+  },
+  "tolerance": "Material name match. Cosine is scale invariant, so the normalization method does not affect the result and is not graded.",
+  "overlap": "Overlaps with L15 in \"matching after background correction\". The discriminator of L15 is the change of the top match itself, so ask it in a different session."
+}

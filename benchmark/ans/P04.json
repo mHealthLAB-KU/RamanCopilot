@@ -1,0 +1,16 @@
+{
+  "item": "P04",
+  "inputs": [
+    "P04_1.csv",
+    "P04_2.csv",
+    "P04_3.csv"
+  ],
+  "expected_file": "P04_expected.csv",
+  "answer": {
+    "n_rows": 3801,
+    "mean_of_result": 173.657397,
+    "max_of_result": 1149.789894
+  },
+  "grading": "Saved CSV row count == 3801, per-point values == arithmetic mean of the three files (rtol 1e-6).",
+  "tolerance": "rtol 1e-6"
+}

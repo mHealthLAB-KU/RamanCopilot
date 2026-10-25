@@ -1,0 +1,12 @@
+{
+  "item": "S16",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Turn on the camera live stream.",
+  "grading_mode": "state check",
+  "answer": "start_camera_stream ok == True, is_streaming == True.",
+  "setup": "Required: stop_camera_stream(). _init_camera already calls start_stream() at startup, so without setup any answer passes.",
+  "todo_from_sheet": "None.",
+  "overlap": "Same correct action (start_camera_stream) as D12. Ask it in a different session."
+}

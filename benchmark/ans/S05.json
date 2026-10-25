@@ -1,0 +1,11 @@
+{
+  "item": "S05",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Switch to the mode that combines four exposures into a single spectrum.",
+  "grading_mode": "state check",
+  "answer": "acquisition_mode == 'accumulate' and num_accumulations == 4 simultaneously.",
+  "setup": "None (initially num_acc=1, aq_mode=single, so it discriminates).",
+  "todo_from_sheet": "None."
+}

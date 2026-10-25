@@ -1,0 +1,11 @@
+{
+  "item": "C03",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Put the shutter back to auto and restore the exposure time to 0.5 seconds.",
+  "grading_mode": "state check",
+  "answer": "shutter == 'auto' and exposure_time_s == 0.5 simultaneously.",
+  "setup": "Required: set the shutter to close and the exposure to a value other than 0.5. The initial exposure is inherited from the previous session and is undetermined.",
+  "todo_from_sheet": "Use setup to set other values so that the previous state is not already auto/0.5."
+}

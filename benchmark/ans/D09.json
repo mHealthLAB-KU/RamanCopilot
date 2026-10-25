@@ -1,0 +1,18 @@
+{
+  "item": "D09",
+  "input": "D09.csv",
+  "expected_file": "D09_expected.csv",
+  "answer": {
+    "cause": "Fluorescence background",
+    "action": "apply_background_subtraction called, result array length == original length"
+  },
+  "detail": {
+    "bg_at_100": 180.0,
+    "bg_at_2000": 4280.0,
+    "rise_ratio": 23.78,
+    "n_points": 3801,
+    "corrected_max": 1003.322
+  },
+  "grading": "Cause == fluorescence background. Trace of an apply_background_subtraction call + result length 3801. The poly_order value itself is not graded (anything 2-10 allowed).",
+  "tolerance": "Class B - the shape of the background curve is not graded; only the call and length are checked."
+}

@@ -1,0 +1,19 @@
+{
+  "item": "D20",
+  "input": "D20.csv",
+  "answer": {
+    "fwhm_cm-1": 8.9892,
+    "label": "well-ordered",
+    "peak_shift": 1332.0
+  },
+  "rule": "FWHM < 20 cm-1 is well-ordered, > 20 cm-1 is disordered. This sample is 8.99, 11.0 cm-1 away from the boundary.",
+  "margin": {
+    "baseline 0": 8.9892,
+    "baseline = median of 1800-2000": 8.989,
+    "baseline = global minimum": 9.0435,
+    "deviation due to baseline choice": "0.605%",
+    "contribution of the broad band (700 cm-1) at 1332": 4.034e-06
+  },
+  "tolerance": "+-5%",
+  "design": "The broad band was placed at 700 cm-1 so that it creates no pedestal under the 1332 peak (contribution 4.0e-06). So the width agrees within 0.605% however the half-height baseline is chosen."
+}

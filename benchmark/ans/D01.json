@@ -1,0 +1,12 @@
+{
+  "setup": "Inject the stage handle in an unresponsive state (on the instrument, physically unplug the USB cable).",
+  "answer": [
+    "get_hardware_status called first",
+    "reconnect_hardware('stage') called",
+    "At most 2 retries when the failure reason is 'resource is still held by this process'",
+    "The response mentions that a process restart is needed"
+  ],
+  "blocker": "There is no harness hook that injects a dead handle. On the instrument it can only be reproduced by unplugging the cable.",
+  "item": "D01",
+  "kind": "hardware state setup (no input file)"
+}

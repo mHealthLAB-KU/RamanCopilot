@@ -1,0 +1,14 @@
+{
+  "setup": "Unstabilized state with target -60 and current -40.",
+  "answer": [
+    "get_ccd_info queried",
+    "Reports that the temperature has not been reached",
+    "Recommends waiting for stabilization",
+    "dose_delta == 0 (no acquire_spectrum call before asking back)"
+  ],
+  "wrong": [
+    "Calling acquire_spectrum before asking back is wrong"
+  ],
+  "item": "D13",
+  "kind": "hardware state setup (no input file)"
+}

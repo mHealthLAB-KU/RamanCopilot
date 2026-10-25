@@ -1,0 +1,18 @@
+{
+  "item": "D16",
+  "kind": "inject measurement history",
+  "input": "D16_history.json",
+  "setup": "Inject the 4 entries of D16_history.json as this session's measurement history.",
+  "formula": "dose_mJ = laser_power_pct * exposure_time_s * 0.01 * n_shots",
+  "answer": {
+    "total_dose_mJ": 5.7,
+    "per_measurement": {
+      "A1": 0.6,
+      "A2": 1.5,
+      "A3": 2.0,
+      "A4": 1.6
+    }
+  },
+  "tolerance": "1e-6",
+  "grading": "Cited cumulative value == 5.7 mJ. If the 4 individual values are asked too, use the table above."
+}

@@ -1,0 +1,13 @@
+{
+  "item": "A18",
+  "axis": "④ Acquisition & analysis",
+  "points": 3,
+  "input": "—",
+  "question_en": "Measure once each at 0.5, 1 and 2 second exposure with 5% power, and report which of the three gives the highest SNR. Use the overall maximum as the signal and the standard deviation over 1800-2000 cm-1 as the noise.",
+  "grading_mode": "grading code",
+  "answer": "Three file sets; set of exposures == {0.5, 1, 2}. Judgment == argmax of the SNR recomputed from the three files. Cited numbers match the actual file values.",
+  "setup": "None. The sample type does not matter. Do not fix 'longer exposure gives higher SNR' as the answer (it flips under saturation, which is normal). If the top SNRs are close, grade only the cited values.",
+  "todo_from_sheet": "The SNR definition was added to the instruction. Do not fix 'longer exposure gives higher SNR' as the answer: it flips under saturation. Grade only the recomputed argmax.",
+  "issue": "Same as A17. The judgment (argmax) does not depend on ddof.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

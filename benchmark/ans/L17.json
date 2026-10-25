@@ -1,0 +1,34 @@
+{
+  "item": "L17",
+  "inputs": [
+    "reference_library.csv"
+  ],
+  "answer": {
+    "pair": [
+      "aragonite",
+      "calcite"
+    ],
+    "similarity": 0.8343
+  },
+  "margin": {
+    "top pair": [
+      "aragonite",
+      "calcite"
+    ],
+    "second pair": [
+      "PET",
+      "PMMA"
+    ],
+    "second score": 0.492,
+    "gap between 1st and 2nd": 0.3423,
+    "top pair agrees across 3 metrics": true,
+    "top score per metric": {
+      "cos_centered": 0.8343,
+      "cos_raw": 0.8409,
+      "cos_minmax": 0.8343
+    },
+    "number of pairs examined": 15
+  },
+  "tolerance": "The material-name set of the pair matches. Score ±0.05 (absorbs the metric deviation).",
+  "note": "The item is closed given the library alone, so the answer is determined without knowing the sample."
+}

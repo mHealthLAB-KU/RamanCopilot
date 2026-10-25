@@ -1,0 +1,12 @@
+{
+  "item": "A11",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, remove the background with a 5th-order polynomial, then report the maximum intensity within 1001 +-10 cm-1.",
+  "grading_mode": "grading code",
+  "answer": "requires: calibrated == True. apply_background_subtraction(poly_order=5). Cited value == maximum of the result array within that range (1e-6).",
+  "setup": "Required: calibrator connected (calibrated == True). The sample type does not matter: 1001 ±10 cm-1 is just a window, not a band of a specific material, and its maximum can be computed for anything mounted. Widening the window to ±10 gives about 8 points on the instrument axis.",
+  "todo_from_sheet": "None. The window was widened from ±5 to ±10 cm-1. The instrument axis spacing is 2.0~2.9 cm-1, so ±5 contains only 4 points and the maximum is dominated by noise. ±10 gives about 8 points.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

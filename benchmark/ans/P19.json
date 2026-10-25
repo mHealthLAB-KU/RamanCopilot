@@ -1,0 +1,24 @@
+{
+  "item": "P19",
+  "input": "P19.csv",
+  "expected_file": "P19_expected.csv",
+  "answer": {
+    "n_peaks": 6,
+    "recovered_peaks_cm-1": [
+      620.0,
+      1001.0,
+      1031.0,
+      1156.5,
+      1450.5,
+      1601.5
+    ]
+  },
+  "rubric": "Local maxima with prominence >= 100 and spacing >= 15 cm-1 after ipbsa(order=5). The noise standard deviation is 6, so 100 is 16x the noise; no spurious peaks get in.",
+  "margin": {
+    "same result for orders 4/5/6": true,
+    "cosine of the corrected result vs the peaks-only reference": 0.99889,
+    "background maximum": 5700.0,
+    "amplitude of the weakest peak": 280.0
+  },
+  "tolerance": "positions ±3 cm-1, count 6, corrected result cos >= 0.99 & NRMSE <= 0.02"
+}

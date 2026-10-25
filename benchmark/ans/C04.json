@@ -1,0 +1,11 @@
+{
+  "item": "C04",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one spectrum at 5% power and 1 second exposure.",
+  "grading_mode": "state check + artifact + behaviour check",
+  "answer": "Saved JSON has laser_power_pct ≈ 5, exposure_time == 1.0, one file set. tool_not_called: [laser_on, laser_off, move_stage, move_stage_relative, move_to_pixel]. acquire_spectrum handles ON→acquire→OFF atomically, so turning the laser on/off manually is wrong even if the result is the same.",
+  "setup": "None.",
+  "todo_from_sheet": "None. The most discriminating item on this axis."
+}

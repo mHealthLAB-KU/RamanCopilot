@@ -1,0 +1,17 @@
+{
+  "item": "P02",
+  "input": "P02.csv",
+  "answer": {
+    "snr_ddof1": 142.884525,
+    "snr_ddof0": 143.063019
+  },
+  "detail": {
+    "max_intensity": 1203.47119,
+    "std_ddof1": 8.422684,
+    "std_ddof0": 8.412175,
+    "n_points_in_noise_region": 401,
+    "peak_leakage_at_1800": 0.0
+  },
+  "tolerance": "relative error 1% - must absorb the ddof 0/1 difference (0.1249%).",
+  "issue": "The question does not state the ddof. To keep a tolerance of 1e-6, state \"sample standard deviation (ddof=1)\" in the question; otherwise relax it to 1%."
+}

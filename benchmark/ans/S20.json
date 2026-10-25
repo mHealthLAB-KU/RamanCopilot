@@ -1,0 +1,11 @@
+{
+  "item": "S20",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Turn the laser off.",
+  "grading_mode": "state check",
+  "answer": "Run after setup with set_laser_power(0.1) + laser_on(). At the end is_on == False.",
+  "setup": "Required: set_laser_power(0.1) + laser_on(). If already off, any answer passes.",
+  "todo_from_sheet": "Without setup the laser is already off and any answer is correct. Setup is required."
+}

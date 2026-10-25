@@ -1,0 +1,52 @@
+{
+  "item": "L15",
+  "inputs": [
+    "L15.csv",
+    "reference_library.csv"
+  ],
+  "preprocess": "5th-order polynomial background removal (ipbsa)",
+  "answer": {
+    "top1_before": "PET",
+    "top1_after": "calcite",
+    "changed": true
+  },
+  "margin": {
+    "top match before removal (3 metrics)": {
+      "cos_centered": "PET",
+      "cos_raw": "PET",
+      "cos_minmax": "PET"
+    },
+    "top match after removal (3 metrics)": {
+      "cos_centered": "calcite",
+      "cos_raw": "calcite",
+      "cos_minmax": "calcite"
+    },
+    "results for orders 3/4/5/6": {
+      "3": [
+        "calcite",
+        0.9158,
+        true
+      ],
+      "4": [
+        "calcite",
+        0.9974,
+        true
+      ],
+      "5": [
+        "calcite",
+        0.9978,
+        true
+      ],
+      "6": [
+        "calcite",
+        0.9978,
+        true
+      ]
+    },
+    "gap between 1st and 2nd after removal": 0.1667,
+    "injected background": "150 + 600 t + 0 t^3 + 2000 t^5 (t = normalized wavenumber)"
+  },
+  "tolerance": "All three items (top before, top after, whether it changed) match. Scores are not graded.",
+  "design": "The background coefficients were chosen by searching for values where the top match before and after removal each agree across the three metrics. Removal with any order 3~6 gives the same top match afterwards.",
+  "overlap": "Overlaps with L11 in \"matching after background correction\". Ask it in a different session."
+}

@@ -1,0 +1,30 @@
+{
+  "item": "P20",
+  "inputs": [
+    "P20.csv",
+    "P20_ref.csv"
+  ],
+  "answer": {
+    "shift_cm-1": 2.5,
+    "sign": "sample = reference + 2.5 (sample peaks shifted to higher wavenumber)"
+  },
+  "axis": {
+    "n": 3741,
+    "min": 120.0,
+    "max": 1990.0,
+    "step": 0.5
+  },
+  "margin": {
+    "estimate per method": {
+      "cross-correlation integer lag": 2.5,
+      "parabolic sub-sample interpolation": 2.4972,
+      "cross-correlation upsampled by 0.05": 2.5,
+      "median of peak pairs": 2.5,
+      "mean of peak pairs": 2.5833
+    },
+    "max - min": 0.0861,
+    "grid": "0.5 cm-1, so 2.5 is exactly 5 steps"
+  },
+  "tolerance": "+-0.2",
+  "grading": "Reported shift 2.5 ±0.2. If the sign is asked, + relative to sample - reference."
+}

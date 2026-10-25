@@ -1,0 +1,12 @@
+{
+  "item": "A03",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, remove the background with a 5th-order polynomial, and also save the result as a csv.",
+  "grading_mode": "artifact + grading code",
+  "answer": "apply_background_subtraction(poly_order=5, save_result=True). The saved CSV exists and its header matches pixel_index, [raman_shift_cm-1,] [wavelength_nm,] intensity, background_intensity.",
+  "setup": "None. The saved file name is forced to bg_corrected_<version_label>_<time>.csv, so do not grade by file name.",
+  "todo_from_sheet": "The original asked to 'save as 54_bg_corrected_*.csv', but the tool cannot produce that name: bg_tools forces the file name to bg_corrected_<version_label>_<time>.csv. The file-name requirement was removed and grading uses the header. Do not grade by file name.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

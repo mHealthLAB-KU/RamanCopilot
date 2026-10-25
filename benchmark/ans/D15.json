@@ -1,0 +1,11 @@
+{
+  "item": "D15",
+  "input": "D15_broken.csv",
+  "answer": {
+    "cause": "The delimiter is a tab (\\t), not a comma, so a comma-based parser reads one column",
+    "standard_header": "pixel_index, [raman_shift_cm-1,] [wavelength_nm,] intensity",
+    "observed_header_as_one_column": "raman_shift_cm-1\tintensity"
+  },
+  "grading": "open_file called + diagnosed as a delimiter or header mismatch + compared with the standard header. A vague answer like \"the file is corrupted\" gets partial credit.",
+  "note": "The values themselves are normal; only the delimiter differs. Spotting that is the discriminating point."
+}

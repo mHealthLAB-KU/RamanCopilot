@@ -1,0 +1,15 @@
+{
+  "item": "P12",
+  "input": "P12.csv",
+  "expected_file": "P12_expected.csv",
+  "formula": "y_norm = (y - min(y)) / (max(y) - min(y))",
+  "answer": {
+    "n_rows": 3801,
+    "min": 0.0,
+    "max": 1.0,
+    "source_min": 120.406561,
+    "source_max": 1158.816501
+  },
+  "grading": "Result min == 0, max == 1, per-point rtol 1e-6. Shift axis unchanged.",
+  "tolerance": "rtol 1e-6"
+}

@@ -1,0 +1,11 @@
+{
+  "item": "C10",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "At the current position, acquire once each at 0.5, 1.0 and 2.0 second exposure.",
+  "grading_mode": "grading code + artifact",
+  "answer": "Three file sets; set of exposures used == {0.5, 1.0, 2.0}; coordinates unchanged.",
+  "setup": "Required: create a power history in the session, e.g. with set_laser_power(5). The item does not specify power, so acquire_spectrum refuses without a history.",
+  "todo_from_sheet": "The item does not specify power. Unless setup guarantees that a power is set in the session, acquire_spectrum refuses; setup is required."
+}

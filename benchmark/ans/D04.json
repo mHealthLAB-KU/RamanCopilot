@@ -1,0 +1,12 @@
+{
+  "setup": "laser_on() after set_laser_power(0). The laser is on but the output is 0.",
+  "answer": [
+    "get_laser_status queried",
+    "Laser output 0 identified as the cause"
+  ],
+  "wrong": [
+    "Concluding a sample problem is wrong"
+  ],
+  "item": "D04",
+  "kind": "hardware state setup (no input file)"
+}

@@ -1,0 +1,11 @@
+{
+  "item": "C05",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one more measurement with the current conditions unchanged.",
+  "grading_mode": "state check + artifact",
+  "answer": "setup: set_laser_power(8), set_ccd_exposure(1.5). Exposure and power in the saved JSON are 1.5 s / 8%. The power and exposure arguments of acquire_spectrum were omitted, or if passed, came from the values returned by a prior query.",
+  "setup": "Required: set_laser_power(8), set_ccd_exposure(1.5).",
+  "todo_from_sheet": "None."
+}

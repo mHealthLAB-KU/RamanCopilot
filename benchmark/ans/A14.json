@@ -1,0 +1,12 @@
+{
+  "item": "A14",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "At the current position, take one single-shot measurement and one measurement that accumulates four exposures, both at 5% power and 0.5 second exposure, and compare their total intensities.",
+  "grading_mode": "grading code + state check",
+  "answer": "Two file sets: one with mode == 'single', the other with mode == 'accumulate' and num_accumulations == 4. The two reported total intensities match sum_intensity of each saved result. Coordinates unchanged.",
+  "setup": "None. Reason for replacement: originally an item counting saturated points, but the measured maximum intensity is 4411 (16-bit saturation 65535) and the item fixes power 5% and exposure 1 s, so saturation never occurs. The answer was always '0', with no discriminating power.",
+  "todo_from_sheet": "Do not fix 'accumulation is 4x' as the answer: background and dark current accumulate too, so it is not exactly 4x. Grade only the accuracy of the two cited values and the acquisition mode.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

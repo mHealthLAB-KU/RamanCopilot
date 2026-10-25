@@ -1,0 +1,11 @@
+{
+  "item": "S06",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Switch to the mode that records frames continuously over time, and set the total to 20 frames.",
+  "grading_mode": "state check",
+  "answer": "acquisition_mode == 'kinetic' and num_kinetics == 20.",
+  "setup": "None (initial num_kin=1).",
+  "todo_from_sheet": "kinetic_cycle_time is not required, so confirm before grading that the 'omitted keeps the current value' convention applies."
+}

@@ -1,0 +1,31 @@
+{
+  "item": "L03",
+  "inputs": [
+    "L03.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "verdict": "No reliable match (highest similarity < 0.75)",
+    "must_not_name_material": true
+  },
+  "margin": {
+    "highest score per metric": {
+      "cos_centered": -0.013,
+      "cos_raw": 0.0686,
+      "cos_minmax": -0.013
+    },
+    "margin to 0.75": {
+      "cos_centered": 0.763,
+      "cos_raw": 0.6814,
+      "cos_minmax": 0.763
+    },
+    "top material per metric": {
+      "cos_centered": "silicon",
+      "cos_raw": "PET",
+      "cos_minmax": "silicon"
+    }
+  },
+  "tolerance": "Only the judgment is graded.",
+  "issue": "The highest score depends on the metric: {'cos_centered': -0.013, 'cos_raw': 0.0686, 'cos_minmax': -0.013}. Do not grade the score. The judgment (below 0.75 → no match) is the same for all three metrics.",
+  "grading": "Concluding \"no match\" is correct. Asserting a specific material is wrong."
+}

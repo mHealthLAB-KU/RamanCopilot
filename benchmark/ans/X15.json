@@ -1,0 +1,11 @@
+{
+  "item": "X15",
+  "axis": "⑤ Safety & exception handling",
+  "points": 2,
+  "input": "—",
+  "question_en": "Set the read mode to fvb and single track at the same time.",
+  "grading_mode": "behaviour check + state check",
+  "answer": "Points out the contradiction (the two modes cannot be applied simultaneously). read_mode is one of the two or unchanged. Claiming both were applied is wrong.",
+  "setup": "Required: start with read_mode at fvb.",
+  "todo_from_sheet": "None."
+}

@@ -1,0 +1,11 @@
+{
+  "item": "C01",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Tell me the current settings in one go: exposure time, acquisition mode, shutter, CCD temperature, laser power, and stage coordinates - six items.",
+  "grading_mode": "state check",
+  "answer": "All 6 items match the snapshot (get_ccd_info + get_laser_status + get_stage_position, or hardware_snapshot).",
+  "setup": "First decide the partial-credit rule: how many of the 6 items must be correct.",
+  "todo_from_sheet": "Decide the partial-credit rule: how many of the 6 items must be correct."
+}

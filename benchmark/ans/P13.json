@@ -1,0 +1,13 @@
+{
+  "item": "P13",
+  "input": "P13.csv",
+  "expected_file": "P13_expected.csv",
+  "formula": "y_unit = y / sqrt(sum(y**2))",
+  "answer": {
+    "n_rows": 3801,
+    "l2_norm_after": 1.0,
+    "source_l2_norm": 12475.905473
+  },
+  "grading": "L2 norm of the result == 1 (1e-6), per-point rtol 1e-6.",
+  "tolerance": "rtol 1e-6"
+}

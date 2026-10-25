@@ -1,0 +1,41 @@
+{
+  "item": "D18",
+  "input": "D18_photobleach.csv",
+  "definition": "Signal = maximum intensity of each frame at 990-1012 cm-1, background = mean of each frame at 1800-2000 cm-1. Slopes are per frame_index unit.",
+  "answer": {
+    "signal_slope_per_frame": -83.2415,
+    "background_slope_per_frame": 5.6018,
+    "cause": "Photobleaching / sample degradation"
+  },
+  "margin": {
+    "slope of the maximum intensity without background subtraction": -77.6397,
+    "difference between the two definitions": "6.73% - within the ±10% tolerance",
+    "background level": [
+      199.51,
+      205.06,
+      211.32,
+      216.94,
+      222.16,
+      227.75,
+      233.36,
+      238.6,
+      244.62,
+      250.18
+    ],
+    "signal level": [
+      998.45,
+      919.51,
+      832.67,
+      752.05,
+      678.06,
+      592.01,
+      498.18,
+      414.35,
+      331.82,
+      256.03
+    ]
+  },
+  "tolerance": "+-10%",
+  "design": "The background was added as a uniform offset over the whole range, so it gives the same slope wherever it is measured (minimum, median, 1800-2000 mean). The background rise (50) was kept at 7 percent of the signal drop (750), so measuring the \"signal\" without background correction deviates by only 6.7%.",
+  "note": "The file has a frame_index column, so load_spectrum rejects it (by design). It must be read with run_analysis(file_ids=[...])."
+}

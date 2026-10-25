@@ -1,0 +1,11 @@
+{
+  "item": "S19",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Switch to the guide beam used for checking the sample position.",
+  "grading_mode": "state check",
+  "answer": "beam mode == guide beam.",
+  "setup": "Required: arm the measurement beam with set_laser_power(5) (power_armed=True). Before arming, _beam_state is already 'guide', so any answer passes. Judged by get_laser_status().power_armed == False.",
+  "todo_from_sheet": "The default of restore_guide_beam in acquire_spectrum is True, so after a measurement item the beam may already be the guide beam. Reset to the measurement beam at the start of the item."
+}

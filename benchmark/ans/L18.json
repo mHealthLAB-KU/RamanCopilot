@@ -1,0 +1,58 @@
+{
+  "item": "L18",
+  "inputs": [
+    "reference_library.csv"
+  ],
+  "rule": "Candidates with a local maximum within 1001 ±5 cm-1 whose intensity is at least 10% of that spectrum's maximum.",
+  "answer": {
+    "spectrum_ids": [
+      "REF01_PET",
+      "REF05_polystyrene"
+    ],
+    "detail": {
+      "REF01_PET": [
+        [
+          1000.0,
+          0.302
+        ]
+      ],
+      "REF05_polystyrene": [
+        [
+          1001.0,
+          1.0
+        ],
+        [
+          1016.0,
+          0.066
+        ]
+      ]
+    }
+  },
+  "margin": {
+    "results per threshold": {
+      "5%": [
+        "REF01_PET",
+        "REF05_polystyrene"
+      ],
+      "10%": [
+        "REF01_PET",
+        "REF05_polystyrene"
+      ],
+      "20%": [
+        "REF01_PET",
+        "REF05_polystyrene"
+      ],
+      "30%": [
+        "REF01_PET",
+        "REF05_polystyrene"
+      ],
+      "40%": [
+        "REF05_polystyrene"
+      ]
+    },
+    "interpretation": "For polystyrene 1001 is the strongest peak (100%); for PET, 1000 is 30% of the maximum. A threshold above 30% drops PET, so the threshold must be fixed in the question or the grading criterion.",
+    "closest rejected candidate": "silicon 957 (44 cm-1 away), calcite 1086 (85 away)"
+  },
+  "tolerance": "Set match. Inventing entries not in the library is wrong.",
+  "issue": "A threshold of 30% or more reduces the answer to [REF05_polystyrene] only. State \"at least 10% of the maximum\" in the grading criterion."
+}

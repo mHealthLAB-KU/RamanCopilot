@@ -1,0 +1,27 @@
+{
+  "item": "P11",
+  "input": "P11.csv",
+  "expected_file": "P11_expected.csv",
+  "answer": {
+    "spike_positions_cm-1": [
+      262.5,
+      440.5,
+      550.0,
+      1641.0
+    ],
+    "n_spikes": 4
+  },
+  "rubric": "Points with |z| > 20 relative to the robust sigma (1.4826*MAD) of the 5-point moving-median residual are treated as spikes and replaced by linear interpolation of their neighbours.",
+  "margin": {
+    "spike z": [
+      1733.3,
+      1508.9,
+      1985.3,
+      1341.6
+    ],
+    "maximum z of real Raman peaks": 3.09,
+    "robust_sigma": 3.5752,
+    "same result over the whole threshold range 8~200x": true
+  },
+  "tolerance": "positions ±0.5, removal result vs reference cos >= 0.99 & NRMSE <= 0.02"
+}

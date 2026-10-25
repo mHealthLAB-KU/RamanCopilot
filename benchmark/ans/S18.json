@@ -1,0 +1,12 @@
+{
+  "item": "S18",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Turn the microscope camera auto-exposure off.",
+  "grading_mode": "state check",
+  "answer": "auto_exposure == False.",
+  "setup": "Required: set_camera_auto_exposure(True). The initial value is already off, and set_camera_exposure has the side effect of turning auto off, so placing this after S17 would pass automatically twice over. There is no read-back path either (same as S17).",
+  "todo_from_sheet": "No read-back for the same reason as S17. Moreover the initial value is already off.",
+  "BLOCKER": "No read-back path (same cause as S17). Moreover the initial state is already auto off, so doing nothing already matches the answer; it is discriminated only by whether the call was made."
+}

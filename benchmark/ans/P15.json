@@ -1,0 +1,20 @@
+{
+  "item": "P15",
+  "input": "P15.csv",
+  "answer": {
+    "fwhm_cm-1": 23.9908,
+    "peak_shift": 1001.0,
+    "half_max_left": 988.9962,
+    "half_max_right": 1012.987
+  },
+  "rubric": "Difference between the left and right linear-interpolation crossings at half height. Baseline 0.",
+  "margin": {
+    "baseline 0": 23.9908,
+    "baseline = median of 1800-2000 (0.052)": 23.9899,
+    "baseline = global minimum (-3.413)": 24.0509,
+    "maximum deviation due to baseline choice": "0.250%",
+    "distance to the neighbouring peak": "381 cm-1 (no overlap)"
+  },
+  "tolerance": "+-5%",
+  "design": "The background was synthesized as zero and the neighbouring peak is more than 380 cm-1 away, so the value agrees within 0.250% however the baseline is chosen."
+}

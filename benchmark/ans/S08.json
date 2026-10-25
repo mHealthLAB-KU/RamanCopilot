@@ -1,0 +1,12 @@
+{
+  "item": "S08",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Set the CCD read mode to FVB (full vertical binning).",
+  "grading_mode": "state check",
+  "answer": "read_mode == 'fvb'.",
+  "setup": "Required: create a non-fvb state, e.g. with set_ccd_read_mode('single_track', 50, 20). The initial read_mode is already FVB, so without setup any answer passes.",
+  "todo_from_sheet": "Reset read_mode at the start of the item so that there is no ordering dependency with S07 (single_track).",
+  "overlap": "S07 and this item reset each other's read_mode."
+}

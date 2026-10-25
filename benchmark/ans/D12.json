@@ -1,0 +1,11 @@
+{
+  "setup": "Camera streaming not started.",
+  "answer": [
+    "is_streaming == False confirmed",
+    "start_camera_stream called",
+    "afterwards is_streaming == True"
+  ],
+  "overlap": "Same correct action as S16. Must be asked in a different session.",
+  "item": "D12",
+  "kind": "hardware state setup (no input file)"
+}

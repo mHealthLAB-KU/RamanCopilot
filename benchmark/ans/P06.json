@@ -1,0 +1,22 @@
+{
+  "item": "P06",
+  "inputs": [
+    "P06_a.csv",
+    "P06_b.csv"
+  ],
+  "answer": {
+    "shift_of_max_abs_diff": 1301.0,
+    "max_abs_diff": 1007.440439,
+    "sign": "a - b is negative at this point - a component present only in b."
+  },
+  "margin": {
+    "second-ranked point": 1300.5,
+    "second-ranked value": 928.0271,
+    "gap between 1st and 2nd": 79.4134,
+    "per-point noise standard deviation of the difference": 2.8207,
+    "gap / noise": 28.2,
+    "maximum difference outside peaks": 8.9797
+  },
+  "tolerance": "shift 1e-6 (exact grid point)",
+  "grading": "Shift of the argmax of |a-b|. If the sign is asked, use a-b."
+}

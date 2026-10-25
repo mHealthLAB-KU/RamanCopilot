@@ -1,0 +1,11 @@
+{
+  "item": "S15",
+  "axis": "① Single operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Run autofocus again, starting from Z = 0.2 mm.",
+  "grading_mode": "state check",
+  "answer": "run_autofocus argument initial_z == 0.2; at the end stage z == returned optimal_z.",
+  "setup": "Place the sample near focus. It converges only if the guide-beam spot is detected at z=0.2 (run_autofocus starts streaming automatically).",
+  "todo_from_sheet": "Without a guide-beam spot it does not converge. Specify whether a convergence failure excludes the item from grading or counts as wrong."
+}

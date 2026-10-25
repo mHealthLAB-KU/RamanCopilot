@@ -1,0 +1,19 @@
+{
+  "item": "P07",
+  "inputs": [
+    "P07_1.csv",
+    "P07_2.csv",
+    "P07_3.csv",
+    "P07_4.csv",
+    "P07_5.csv"
+  ],
+  "answer": {
+    "outlier_file": "P07_3.csv",
+    "reason": "The other four have the 620/1001/1031/1155/1450/1602 peak group; only this one has a single 520.7 peak"
+  },
+  "margin": {
+    "minimum cosine between the same material": 0.9966,
+    "maximum cosine with the outlier": -0.016
+  },
+  "grading": "Reported file name == P07_3.csv. A name not in the list is wrong."
+}

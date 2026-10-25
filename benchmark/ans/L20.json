@@ -1,0 +1,50 @@
+{
+  "item": "L20",
+  "inputs": [
+    "L20.csv",
+    "reference_library.csv"
+  ],
+  "definition": "\"Normalized\" means dividing both query and reference by their own maximum intensity before comparing. \"As is\" means both keep their original values.",
+  "answer": {
+    "top1_raw": "silicon",
+    "top1_normalized": "PET",
+    "same": false
+  },
+  "margin": {
+    "ranking before normalization": [
+      [
+        "silicon",
+        2002.48
+      ],
+      [
+        "aragonite",
+        2431.22
+      ],
+      [
+        "calcite",
+        2448.72
+      ]
+    ],
+    "ranking after normalization": [
+      [
+        "PET",
+        0.436
+      ],
+      [
+        "PMMA",
+        4.1077
+      ],
+      [
+        "calcite",
+        4.7392
+      ]
+    ],
+    "gap between 1st and 2nd before normalization": "21.4%",
+    "gap between 1st and 2nd after normalization": "842.2%",
+    "query intensity scale factor": 0.03,
+    "original material of the query": "PET"
+  },
+  "tolerance": "All three items (top before, top after, same or not) match",
+  "issue": "The question could be read as normalizing only the query. Normalizing only the query mismatches the scale with the references (maximum ~1000), making both cases give the same answer. Add \"divide both the query and the references by their own maximum intensity\" to the question.",
+  "replaces": "The original item used cosine, but cosine is scale invariant, so the top match can never change with normalization. It only works with Euclidean distance."
+}

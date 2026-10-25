@@ -1,0 +1,12 @@
+{
+  "item": "A20",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Acquire five spectra at the same position, compute the mean spectrum, and save and plot it.",
+  "grading_mode": "grading code + artifact",
+  "answer": "Saved mean == arithmetic mean of the 5 acquisitions (rtol 1e-6), plot exists, coordinates unchanged.",
+  "setup": "Required: set_laser_power + set_ccd_exposure beforehand. The item does not specify power or exposure, so acquire_spectrum refuses if the session has no power history.",
+  "todo_from_sheet": "Power and exposure are not specified, so fix them in setup (if unset, acquire_spectrum refuses).",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

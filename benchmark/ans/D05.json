@@ -1,0 +1,12 @@
+{
+  "setup": "set_ccd_cooler(False) after set_ccd_temperature(-60).",
+  "answer": [
+    "get_ccd_info queried first",
+    "Cooler OFF identified as the cause",
+    "cooler_on == True after the fix",
+    "Target temperature stays -60"
+  ],
+  "note": "Changing the target temperature is wrong: the cause is the cooler, not the target.",
+  "item": "D05",
+  "kind": "hardware state setup (no input file)"
+}

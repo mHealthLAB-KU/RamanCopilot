@@ -1,0 +1,21 @@
+{
+  "item": "P08",
+  "input": "P08.csv",
+  "expected_file": "P08_expected.csv",
+  "source_axis": {
+    "n": 1024,
+    "min": 130.07,
+    "max": 2630.34,
+    "step_min": 2.116961,
+    "step_max": 2.821636,
+    "note": "The spacing varies by 33.3%, clearly not uniform."
+  },
+  "answer": {
+    "n_rows": 5000,
+    "first_shift": 130.5,
+    "last_shift": 2630.0,
+    "spacing": 0.5
+  },
+  "grading": "All adjacent shift differences are 0.5 (1e-6), start and end within the original range, 5000 rows. The interpolation method is not graded; pass if cos >= 0.999 against the linear-interpolation reference.",
+  "tolerance": "spacing 1e-6 / values cos >= 0.999 against the reference"
+}

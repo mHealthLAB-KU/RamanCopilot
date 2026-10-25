@@ -1,0 +1,11 @@
+{
+  "item": "C11",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Acquire one spectrum at each of X = 37.0, 37.2, 37.4, 37.6, 37.8, 38.0 mm, with Y = 25.25 and Z = 0.",
+  "grading_mode": "grading code",
+  "answer": "X list of measured coordinates == the 6 values (±0.001), all Y 25.25, six file sets.",
+  "setup": "Required: set_laser_power + set_ccd_exposure beforehand. Same reason as C10. Check that X 37.0~38.0 from the start coordinate is within the travel range.",
+  "todo_from_sheet": "Power and exposure not specified: fix them in setup or state them in the item."
+}

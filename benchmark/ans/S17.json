@@ -1,0 +1,12 @@
+{
+  "item": "S17",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Set the microscope camera exposure time to 20 ms.",
+  "grading_mode": "state check",
+  "answer": "camera exposure == 20 ms.",
+  "setup": "The instrument does not keep the camera exposure in a Python attribute (StreamingTUCam.set_exposure goes straight to the SDK), so there is no read-back path. Grade by the tool call argument (ms=20) or drop the item.",
+  "todo_from_sheet": "No read-back path on the instrument: StreamingTUCam.set_exposure goes straight to the SDK without keeping the value in an attribute, and hardware_snapshot has no camera entry. Grade by the tool call argument or drop the item.",
+  "BLOCKER": "No read-back path: StreamingTUCam.set_exposure goes straight to the SDK and keeps no value in a Python attribute. hardware_snapshot has no camera entry either. Can only be graded by the call argument (20 ms)."
+}

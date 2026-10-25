@@ -1,0 +1,44 @@
+{
+  "item": "L08",
+  "inputs": [
+    "L08.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "material": "PMMA",
+    "class": "organic polymer"
+  },
+  "class_table": {
+    "organic polymer": [
+      "PET",
+      "PMMA",
+      "polystyrene"
+    ],
+    "inorganic mineral": [
+      "calcite",
+      "aragonite",
+      "silicon"
+    ]
+  },
+  "margin": {
+    "cos_centered": {
+      "top1": "PMMA",
+      "score": 0.9985,
+      "top2": "PET",
+      "gap": 0.5095
+    },
+    "cos_raw": {
+      "top1": "PMMA",
+      "score": 0.9986,
+      "top2": "PET",
+      "gap": 0.4624
+    },
+    "cos_minmax": {
+      "top1": "PMMA",
+      "score": 0.9985,
+      "top2": "PET",
+      "gap": 0.5095
+    }
+  },
+  "tolerance": "both material name and class match"
+}

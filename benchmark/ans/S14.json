@@ -1,0 +1,11 @@
+{
+  "item": "S14",
+  "axis": "① Single operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Make the sample on screen move 0.05 mm to the right as seen on screen. Work out the required stage motion and execute it.",
+  "grading_mode": "state check",
+  "answer": "x_after - x_before == -0.05 (±0.001), following the sign convention between screen left/right and stage X (SIGN_X = -1).",
+  "setup": "Camera streaming ON. The grading code must read optics_map.SIGN_X to derive the expected sign.",
+  "todo_from_sheet": "The correct sign depends on the SIGN_X constant in the code. If the optics or camera mounting changes, the answer flips, so the grading code must read the constant for comparison."
+}

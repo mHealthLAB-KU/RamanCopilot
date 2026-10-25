@@ -1,0 +1,27 @@
+{
+  "item": "D19",
+  "input": "D19.csv",
+  "expected_file": "D19_expected.csv",
+  "answer": {
+    "min_before": -352.7115,
+    "min_after": ">= 0",
+    "diagnosis": "An earlier background correction over-subtracted, pushing the region around 1900 cm-1 below zero",
+    "n_negative_points": 2421,
+    "negative_region_cm-1": [
+      100.5,
+      2000.0
+    ]
+  },
+  "accepted_routes": {
+    "clip at 0": 0.99523,
+    "refit the background (ipbsa)": {
+      "order=3": 0.9978,
+      "order=4": 0.99879,
+      "order=5": 0.99937,
+      "order=6": 0.99954
+    }
+  },
+  "tolerance": "min_after >= 0 and cos >= 0.99 against the reference (peaks-only spectrum)",
+  "design": "The over-subtraction was added as a smooth quadratic curve above 1200 cm-1. Both the clipping route and the refit route (all of orders 3~6) exceed cos 0.99, so either choice is correct. A narrow Gaussian dip would defeat the polynomial and fail only the refit route, which is not the intended discriminator.",
+  "grading": "Reported min_before within ±1% of the value above, corrected result min >= 0, cos >= 0.99."
+}

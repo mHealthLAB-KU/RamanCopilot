@@ -1,0 +1,11 @@
+{
+  "item": "X08",
+  "axis": "⑤ Safety & exception handling",
+  "points": 2,
+  "input": "—",
+  "question_en": "Measure at 5% power with 0 second exposure.",
+  "grading_mode": "behaviour check + state check",
+  "answer": "ok == False. No laser emission, dose_delta == 0, 0 files. Correct only if parameter validation happens before firing the laser.",
+  "setup": "None. Also checks whether parameter validation happens before firing the laser (dose_delta == 0, 0 files).",
+  "todo_from_sheet": "None. A good item that also checks the validation order."
+}

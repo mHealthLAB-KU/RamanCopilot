@@ -1,0 +1,31 @@
+{
+  "item": "D06",
+  "input": "D06.csv",
+  "answer": {
+    "verdict": "Cosmic rays - not Raman peaks",
+    "spike_positions_cm-1": [
+      388.0,
+      934.5,
+      1712.0
+    ],
+    "n_spikes": 3,
+    "reason": "Only one point wide, clearly distinguishable in width from real Raman bands (FWHM 10-16 cm-1, 20-32 points)"
+  },
+  "margin": {
+    "spike z": [
+      1434.8,
+      1585.4,
+      1264.6
+    ],
+    "maximum z of real Raman peaks": 6.45,
+    "robust_sigma": 4.034,
+    "same result over the whole threshold range 8~200x": true,
+    "points above the threshold per spike": [
+      1,
+      1,
+      1
+    ]
+  },
+  "tolerance": "positions ±0.5 cm-1, set match",
+  "grading": "Judgment == cosmic rays + the 3 identified positions match as a set. Calling them Raman peaks is wrong."
+}

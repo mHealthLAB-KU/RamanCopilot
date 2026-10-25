@@ -1,0 +1,61 @@
+{
+  "item": "L07",
+  "inputs": [
+    "L07.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "material": "aragonite",
+    "acceptable_distinguishing_peaks": [
+      206.0,
+      705.0,
+      1462.0
+    ],
+    "note": "Citing any 2 of the 3 above is correct."
+  },
+  "reference_peaks": {
+    "aragonite": [
+      152.0,
+      206.0,
+      705.0,
+      1085.0,
+      1462.0
+    ],
+    "calcite": [
+      155.0,
+      282.0,
+      713.0,
+      1086.0,
+      1435.0
+    ],
+    "present only in aragonite (±3 criterion)": [
+      206.0,
+      705.0,
+      1462.0
+    ]
+  },
+  "margin": {
+    "cos_centered": {
+      "top1": "aragonite",
+      "score": 0.9968,
+      "top2": "calcite",
+      "gap": 0.1648
+    },
+    "cos_raw": {
+      "top1": "aragonite",
+      "score": 0.9967,
+      "top2": "calcite",
+      "gap": 0.1574
+    },
+    "cos_minmax": {
+      "top1": "aragonite",
+      "score": 0.9968,
+      "top2": "calcite",
+      "gap": 0.1648
+    },
+    "gap between 705 and calcite 713": 8.0,
+    "gap between 206 and calcite 282": 76.0,
+    "gap between 1462 and calcite 1435": 27.0
+  },
+  "tolerance": "Material name match + at least 2 from the list above, each ±3 cm-1. 1085/1086 and 152/155 occur in both materials and are not accepted as evidence."
+}

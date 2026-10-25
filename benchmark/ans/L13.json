@@ -1,0 +1,151 @@
+{
+  "item": "L13",
+  "inputs": [
+    "L13_1.csv",
+    "L13_2.csv",
+    "L13_3.csv",
+    "L13_4.csv",
+    "L13_5.csv",
+    "reference_library_8.csv"
+  ],
+  "library": "8 entries (REF01_PET, REF02_PMMA, REF03_aragonite, REF04_calcite, REF05_polystyrene, REF06_silicon, REF07_diamond, REF08_quartz)",
+  "rule": "If the highest similarity is below 0.75, state that the material is not in the library.",
+  "answer": {
+    "L13_1.csv": {
+      "top3": [
+        {
+          "material": "polystyrene",
+          "spectrum_id": "REF05_polystyrene",
+          "score": 0.9983
+        },
+        {
+          "material": "PET",
+          "spectrum_id": "REF01_PET",
+          "score": 0.1481
+        },
+        {
+          "material": "PMMA",
+          "spectrum_id": "REF02_PMMA",
+          "score": 0.0763
+        }
+      ],
+      "verdict": "in library",
+      "top-1 score per metric": {
+        "cos_centered": 0.9983,
+        "cos_raw": 0.9984,
+        "cos_minmax": 0.9983
+      },
+      "top match agrees across 3 metrics": true
+    },
+    "L13_2.csv": {
+      "top3": [
+        {
+          "material": "PET",
+          "spectrum_id": "REF01_PET",
+          "score": 0.9985
+        },
+        {
+          "material": "PMMA",
+          "spectrum_id": "REF02_PMMA",
+          "score": 0.4938
+        },
+        {
+          "material": "polystyrene",
+          "spectrum_id": "REF05_polystyrene",
+          "score": 0.1449
+        }
+      ],
+      "verdict": "in library",
+      "top-1 score per metric": {
+        "cos_centered": 0.9985,
+        "cos_raw": 0.9986,
+        "cos_minmax": 0.9985
+      },
+      "top match agrees across 3 metrics": true
+    },
+    "L13_3.csv": {
+      "top3": [
+        {
+          "material": "calcite",
+          "spectrum_id": "REF04_calcite",
+          "score": 0.9966
+        },
+        {
+          "material": "aragonite",
+          "spectrum_id": "REF03_aragonite",
+          "score": 0.8371
+        },
+        {
+          "material": "quartz",
+          "spectrum_id": "REF08_quartz",
+          "score": 0.0655
+        }
+      ],
+      "verdict": "in library",
+      "top-1 score per metric": {
+        "cos_centered": 0.9966,
+        "cos_raw": 0.9965,
+        "cos_minmax": 0.9966
+      },
+      "top match agrees across 3 metrics": true
+    },
+    "L13_4.csv": {
+      "top3": [
+        {
+          "material": "silicon",
+          "spectrum_id": "REF06_silicon",
+          "score": -0.0163
+        },
+        {
+          "material": "PET",
+          "spectrum_id": "REF01_PET",
+          "score": -0.0216
+        },
+        {
+          "material": "diamond",
+          "spectrum_id": "REF07_diamond",
+          "score": -0.0247
+        }
+      ],
+      "verdict": "not in library",
+      "top-1 score per metric": {
+        "cos_centered": -0.0163,
+        "cos_raw": 0.0657,
+        "cos_minmax": -0.0163
+      },
+      "top match agrees across 3 metrics": false
+    },
+    "L13_5.csv": {
+      "top3": [
+        {
+          "material": "diamond",
+          "spectrum_id": "REF07_diamond",
+          "score": -0.0179
+        },
+        {
+          "material": "silicon",
+          "spectrum_id": "REF06_silicon",
+          "score": -0.0257
+        },
+        {
+          "material": "quartz",
+          "spectrum_id": "REF08_quartz",
+          "score": -0.0324
+        }
+      ],
+      "verdict": "not in library",
+      "top-1 score per metric": {
+        "cos_centered": -0.0179,
+        "cos_raw": 0.0354,
+        "cos_minmax": -0.0179
+      },
+      "top match agrees across 3 metrics": false
+    }
+  },
+  "summary": {
+    "in library": 3,
+    "not in library (unregistered)": 2,
+    "hit@3": 0.6
+  },
+  "tolerance": "All 5 judgments match + the set of top-3 materials matches. Score ±0.05 (covers the metric deviation)."
+}

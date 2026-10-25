@@ -1,0 +1,51 @@
+{
+  "item": "L01",
+  "inputs": [
+    "L01.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "material": "calcite",
+    "spectrum_id": "REF04_calcite",
+    "best_score": 0.9968
+  },
+  "rubric": "Mean-centered cosine after interpolation onto the library axis (120-1990, 1 cm-1).",
+  "margin": {
+    "cos_centered": {
+      "top1": "calcite",
+      "score": 0.9968,
+      "top2": "aragonite",
+      "gap": 0.1647
+    },
+    "cos_raw": {
+      "top1": "calcite",
+      "score": 0.9966,
+      "top2": "aragonite",
+      "gap": 0.1572
+    },
+    "cos_minmax": {
+      "top1": "calcite",
+      "score": 0.9968,
+      "top2": "aragonite",
+      "gap": 0.1647
+    }
+  },
+  "top3": [
+    {
+      "material": "calcite",
+      "spectrum_id": "REF04_calcite",
+      "score": 0.9968
+    },
+    {
+      "material": "aragonite",
+      "spectrum_id": "REF03_aragonite",
+      "score": 0.8321
+    },
+    {
+      "material": "PET",
+      "spectrum_id": "REF01_PET",
+      "score": 0.0501
+    }
+  ],
+  "tolerance": "Material name match. The score shifts by ±0.01 with the choice of metric, so to also grade the score, allow the range of the three values above."
+}

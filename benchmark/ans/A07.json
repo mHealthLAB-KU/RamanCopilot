@@ -1,0 +1,12 @@
+{
+  "item": "A07",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, and report the wavelength in nm of the point whose Raman shift is closest to 1000 cm-1.",
+  "grading_mode": "grading code",
+  "answer": "requires: calibrated == True. One file set. In the saved CSV, find the row minimizing |raman_shift_cm-1 - 1000|; its wavelength_nm matches the reported value (1e-6). If tied, both values are correct.",
+  "setup": "Required: the calibrator is connected, calibrated == True, and the saved CSV has a wavelength_nm column. Reason for replacement: originally a 3x3 grid bundling item, but its grid acquisition was redundant and file manipulation did not fit this axis.",
+  "todo_from_sheet": "The instrument axis spacing is 2.0~2.9 cm-1, so no grid point lies exactly at 1000 cm-1; the 'closest point' is uniquely determined. Check in advance that the saved CSV actually contains a wavelength_nm column (calibrator connected).",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

@@ -1,0 +1,52 @@
+{
+  "item": "L14",
+  "inputs": [
+    "L14.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "material": "polystyrene",
+    "top1_score": 0.7979,
+    "marginal_threshold": 0.85,
+    "verdict": "borderline - the top-1 similarity is below 0.85, so it must be flagged as such"
+  },
+  "top3": [
+    {
+      "material": "polystyrene",
+      "spectrum_id": "REF05_polystyrene",
+      "score": 0.7979
+    },
+    {
+      "material": "PET",
+      "spectrum_id": "REF01_PET",
+      "score": 0.1377
+    },
+    {
+      "material": "PMMA",
+      "spectrum_id": "REF02_PMMA",
+      "score": 0.0741
+    }
+  ],
+  "margin": {
+    "top-1 score per metric": {
+      "cos_centered": 0.7979,
+      "cos_raw": 0.811,
+      "cos_minmax": 0.7979
+    },
+    "margin to 0.85 (borderline threshold)": {
+      "cos_centered": 0.0521,
+      "cos_raw": 0.039,
+      "cos_minmax": 0.0521
+    },
+    "margin to 0.75 (no-match threshold)": {
+      "cos_centered": 0.0479,
+      "cos_raw": 0.061,
+      "cos_minmax": 0.0479
+    },
+    "gap to the runner-up": 0.6602,
+    "top match agrees across 3 metrics": true,
+    "injected noise": "0.74x the reference standard deviation (seed 400)"
+  },
+  "tolerance": "Material name match + \"borderline\" flag required. Score ±0.05.",
+  "replaces": "The previous L18.csv had a top-1 of 0.966, so the borderline branch was never exercised. Replacing it with this file makes the item measure what it intends to."
+}

@@ -1,0 +1,11 @@
+{
+  "item": "S01",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "List the instruments that are currently connected.",
+  "grading_mode": "state check",
+  "answer": "The reported connection states of stage/laser/ccd/camera all match get_hardware_status.",
+  "setup": "Include a state with some instruments disconnected at least once; if only the all-connected state is used, any answer passes.",
+  "todo_from_sheet": "Check that all 4 keys are always returned in simulation mode too. Inject a partially connected state so that an 'all connected' answer does not pass."
+}

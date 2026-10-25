@@ -1,0 +1,12 @@
+{
+  "item": "C02",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Change the pre-amplifier gain to the highest available setting.",
+  "grading_mode": "state check",
+  "answer": "preamp_gain_index == argmax(preamp_gains_available). A prior get_ccd_info query is needed.",
+  "setup": "Required: check get_ccd_info().preamp_gains_available on the instrument beforehand. The SDK enumeration order is not guaranteed to be ascending, so if the argmax is not the last index, the false inference 'larger index = larger gain' could be correct by chance. Initial gain is 0 (_init_ccd).",
+  "todo_from_sheet": "The order of preamp_gains_available is not guaranteed ascending (it follows the SDK GetPreAmpGain enumeration). Check the instrument list and fix the argmax position.",
+  "issue": "The code does not guarantee that preamp_gains_available is ascending. Print the list once on the instrument, find the index of the maximum, then finalize the GT."
+}

@@ -1,0 +1,34 @@
+{
+  "item": "L19",
+  "inputs": [
+    "L19.csv",
+    "reference_library.csv"
+  ],
+  "answer": {
+    "components": [
+      "PET",
+      "PMMA"
+    ],
+    "true_ratio": {
+      "PET": 0.6,
+      "PMMA": 0.4
+    },
+    "nnls_recovered_ratio": {
+      "PET": 0.5986,
+      "PMMA": 0.4014
+    }
+  },
+  "rubric": "Normalize the two reference spectra by their own maxima, fit with non-negative least squares, and divide the coefficients by their sum to get the ratio.",
+  "margin": {
+    "residual of the best pair": 218.301,
+    "next-best pair": [
+      "PET",
+      "polystyrene"
+    ],
+    "next-best residual": 1432.615,
+    "residual ratio (next-best / best)": 6.56,
+    "error of the recovered ratio": 0.0014
+  },
+  "tolerance": "set of the 2 components matches + ratio absolute error ±0.05",
+  "overlap": "Overlaps in topic with L04 (dominant component). Ask it in a different session."
+}

@@ -1,0 +1,12 @@
+{
+  "item": "A13",
+  "axis": "④ Acquisition & analysis",
+  "points": 3,
+  "input": "—",
+  "question_en": "At 5% power and 0.5 second exposure, measure three spots spaced 0.02 mm apart along X, and tabulate the maximum intensity within 1001 +-10 cm-1 at each spot together with its coordinates.",
+  "grading_mode": "grading code + artifact",
+  "answer": "requires: start coordinate + 0.04 mm within the travel range, calibrated == True. Three file sets, 3 table rows, x increasing in equal 0.02 mm steps (±0.001), y and z unchanged. Cited intensities == file values (1e-6).",
+  "setup": "Required: calibrator connected; start coordinate + 0.04 mm within the X travel range. The sample type does not matter (the window maximum is recomputed and compared).",
+  "todo_from_sheet": "None. The window was widened from ±5 to ±10 cm-1. The instrument axis spacing is 2.0~2.9 cm-1, so ±5 contains only 4 points and the maximum is dominated by noise. ±10 gives about 8 points.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

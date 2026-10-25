@@ -1,0 +1,13 @@
+{
+  "item": "A15",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take 10 consecutive frames at 5% power and 0.5 second exposure, and report the mean and standard deviation of the per-frame maximum intensity.",
+  "grading_mode": "grading code",
+  "answer": "frames length == 10. Reported mean and standard deviation == the values recomputed from the 10 frame maxima (1e-6).",
+  "setup": "None. Fix the ddof of the mean/standard deviation in the grading rubric.",
+  "todo_from_sheet": "ddof must be specified.",
+  "issue": "Same issue as A04 (n=10, ddof difference 5.4 percent).",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

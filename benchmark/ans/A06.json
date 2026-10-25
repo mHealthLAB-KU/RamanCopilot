@@ -1,0 +1,12 @@
+{
+  "item": "A06",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "At the current position, take three measurements at 5% power and 0.5 second exposure, then produce a summary table with one row per measurement and save it.",
+  "grading_mode": "artifact + grading code",
+  "answer": "Three measurement sets + one summary CSV (_summary_*.csv). The header matches date, time, title, x, y, power_pct, exposure_s, mode, max_intensity, sum_intensity, peak_raman_shift_cm-1, with 3 data rows. In each row power_pct ≈ 5, exposure_s == 0.5, and max_intensity and sum_intensity match the values recomputed from the corresponding measurement file.",
+  "setup": "Required: no need to create a power history with set_laser_power (the item specifies it). The session folder must be empty; leftover measurements would make the summary exceed 3 rows. Reason for replacement: originally an item on the coordinate of the maximum intensity in a 3x3 grid, but its grid acquisition fully overlapped A07, A12 and A19.",
+  "todo_from_sheet": "aggregate_spectra_csv fixes the 11 header columns in code, so grading works directly. The summary CSV has a '_' prefix and is not listed by list_results, so the grading code must scan the session folder directly.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

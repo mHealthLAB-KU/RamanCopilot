@@ -1,0 +1,11 @@
+{
+  "item": "C14",
+  "axis": "② Compound operation",
+  "points": 3,
+  "input": "—",
+  "question_en": "From the current stage position, scan a grid of 4 points across and 2 down at 0.02 mm spacing, 1 second exposure, 3% power. Preview first, then run it.",
+  "grading_mode": "behaviour check + grading code",
+  "answer": "run_grid_scan with rows == 2, cols == 4. 8 files whose coordinates match _grid_stage_coords(cx, cy, 2, 4, 0.02) as a set. Swapping rows/cols changes the coordinate sequence and is immediately wrong.",
+  "setup": "None. Same as C13. Swapping rows/cols changes the coordinate sequence and is immediately wrong.",
+  "todo_from_sheet": "None. The purpose is to detect rows/cols confusion."
+}

@@ -1,0 +1,11 @@
+{
+  "item": "C17",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Measurements are done. Turn the laser off, close the shutter, and summarize what this session produced.",
+  "grading_mode": "state check + artifact",
+  "answer": "setup: set_laser_power(5), laser_on(), acquire_spectrum ×2. is_on == False, shutter == 'close', and the reported file list matches the actual files in the session folder as a set.",
+  "setup": "Required: set_laser_power(5), laser_on(), acquire_spectrum ×2 to create the artifacts to clean up.",
+  "todo_from_sheet": "Add a clause to the grading code that inventing non-existent file names is wrong."
+}

@@ -1,0 +1,11 @@
+{
+  "setup": "Start the item after set_ccd_shutter('close').",
+  "answer": [
+    "get_ccd_info queried first",
+    "Switch to 'auto' or 'open' with set_ccd_shutter",
+    "The maximum intensity of the re-measurement increases compared with before the fix"
+  ],
+  "note": "One measurement before the fix must be kept to compare the \"increase\".",
+  "item": "D03",
+  "kind": "hardware state setup (no input file)"
+}

@@ -1,0 +1,11 @@
+{
+  "item": "S10",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Report the detector sensor size in pixels (width and height).",
+  "grading_mode": "state check",
+  "answer": "Reported Nx, Ny == detector pixel count from get_ccd_info (exact match).",
+  "setup": "None.",
+  "todo_from_sheet": "Distinguish the setting (readout) from the physical sensor size (detector) and fix which field is the answer."
+}

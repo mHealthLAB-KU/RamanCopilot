@@ -1,0 +1,13 @@
+{
+  "item": "S07",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Switch to the read mode that reads only a 20-pixel-wide band centered on CCD row 50.",
+  "grading_mode": "state check",
+  "answer": "read_mode == 'single_track', single_track_center == 50, single_track_width == 20, all three fields simultaneously.",
+  "setup": "Start with read_mode at fvb. Restore fvb afterwards.",
+  "todo_from_sheet": "No tool returns the single_track center/width (set_ccd_read_mode returns only read_mode, hbin, Nx_ro, Ny_ro, and get_ccd_info has none). The grading code must read the driver attributes ro_single_track_center / ro_single_track_width directly.",
+  "BLOCKER": "No read-back path: neither the set_ccd_read_mode nor the get_ccd_info return contains the single_track center/width. The grading code must read the driver attributes (_ccd.ro_single_track_center / ro_single_track_width) directly.",
+  "overlap": "S08 and this item reset each other's read_mode. The setup of one is the answer of the other."
+}

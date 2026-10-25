@@ -1,0 +1,16 @@
+{
+  "item": "P05",
+  "input": "P05.csv",
+  "expected_file": "P05_expected.csv",
+  "formula": "shift_cm-1 = 1e7 * (1/532.021 - 1/lambda_nm)",
+  "answer": {
+    "n_rows": 3701,
+    "shift_min": 150.0,
+    "shift_max": 2000.0,
+    "lambda_min_nm": 536.30084972,
+    "lambda_max_nm": 595.37097198
+  },
+  "tolerance": "rtol 1e-6",
+  "precision_note": "The maximum relative error of the shift traced back from the file's wavelength_nm is 1.09e-09, about 0.1% of rtol 1e-6.",
+  "grading": "Row count unchanged; each row's shift matches the formula above within rtol 1e-6. Intensities unchanged."
+}

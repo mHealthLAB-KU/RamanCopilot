@@ -1,0 +1,11 @@
+{
+  "item": "C07",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Without moving, expose four times at the same spot and leave only one combined spectrum. Use 5% power and 0.5 second exposure.",
+  "grading_mode": "state check + artifact",
+  "answer": "One file set, acq_mode == 'accumulate', num_accumulations == 4, coordinates unchanged.",
+  "setup": "None (initial num_acc=1).",
+  "todo_from_sheet": "None."
+}

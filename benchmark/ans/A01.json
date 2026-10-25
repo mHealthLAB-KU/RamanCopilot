@@ -1,0 +1,12 @@
+{
+  "item": "A01",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, and report the maximum intensity of that spectrum.",
+  "grading_mode": "grading code",
+  "answer": "One file set. The cited number == max_intensity in the saved JSON.",
+  "setup": "None.",
+  "todo_from_sheet": "None.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}

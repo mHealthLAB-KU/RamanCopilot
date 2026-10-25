@@ -1,0 +1,33 @@
+{
+  "item": "P09",
+  "inputs": [
+    "P09_1.csv",
+    "P09_2.csv",
+    "P09_3.csv"
+  ],
+  "expected_file": "P09_expected.csv",
+  "answer": {
+    "n_rows": 3801,
+    "n_intensity_columns": 3,
+    "common_axis": [
+      100.0,
+      2000.0,
+      0.5
+    ],
+    "column_means": [
+      203.796581,
+      233.512353,
+      263.530968
+    ],
+    "column_maxes": [
+      1178.623929,
+      1218.401897,
+      1238.187629
+    ]
+  },
+  "accepted_route": "Call save_result 3 times to leave 3 files sharing a common shift axis. Verified in the actual sandbox: ok=True, all 3 files have identical raman_shift_cm-1, and each intensity matches its original within rtol 1e-6. Up to 20 files can be saved in one run.",
+  "grading": "3 saved files, each with 3801 rows; the raman_shift_cm-1 of the three files are identical (1e-6); the three intensity columns match the 3 originals one-to-one (in any order) within rtol 1e-6. File names are not graded.",
+  "tolerance": "rtol 1e-6",
+  "note": "save_result has a fixed format pixel_index,[raman_shift_cm-1,][wavelength_nm,]intensity and writes only one intensity column (a 2D array raises TypeError). So a single file with 3 intensity columns cannot be produced; the artifact of this item is 3 files sharing a common axis. The merge itself (\"checking the three axes are equal and aligning them\") remains in the grading.",
+  "expected_file_note": "P09_expected.csv is a 4-column (1 axis + 3 intensities) reference table. The agent cannot save in this shape, so it is used only for value comparison."
+}

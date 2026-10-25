@@ -1,0 +1,12 @@
+{
+  "item": "S09",
+  "axis": "① Single operation",
+  "points": 1,
+  "input": "—",
+  "question_en": "Switch the CCD trigger to external.",
+  "grading_mode": "state check",
+  "answer": "trigger_mode == 'external'.",
+  "setup": "Restoring set_ccd_trigger_mode('internal') afterwards is required; without an external signal all following acquisition items hang waiting.",
+  "todo_from_sheet": "A teardown restoring internal afterwards is required. Without an external signal all following acquisition items hang waiting.",
+  "overlap": "Deals with the same field (trigger_mode) as D14. Ask it in a different session."
+}

@@ -1,0 +1,12 @@
+{
+  "setup": "set_ccd_trigger_mode('external') + no external trigger signal.",
+  "answer": [
+    "get_ccd_info queried",
+    "Waiting for an external trigger identified as the cause",
+    "Proposes or performs a return to internal"
+  ],
+  "overlap": "Deals with the same field as S09. Ask in a different session.",
+  "teardown": "Return trigger_mode to internal after the item.",
+  "item": "D14",
+  "kind": "hardware state setup (no input file)"
+}

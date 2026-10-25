@@ -1,0 +1,11 @@
+{
+  "item": "C20",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Take one measurement at 5% power and 1 second exposure, capture the current microscope view, and save the two together as a single measurement-point record named P001.",
+  "grading_mode": "artifact + grading code",
+  "answer": "One record under data/runs/<session>/points/ whose file name ends with '_P001.json'. In that JSON point_id == 'P001', position matches the current stage coordinates (±0.001), spectrum.exposure_time == 1.0 and laser_power_pct ≈ 5 with spectrum.csv pointing to an actually saved measurement file, and image is not null. The missing array returned by save_measurement_point must be empty.",
+  "setup": "Required: camera streaming ON (if capture_scene receives no frame, image is empty and the record is incomplete). The session's points folder must be empty. The item specifies the power, so no separate arming is needed.",
+  "todo_from_sheet": "The file name is NN_<point_id>.json (NN = sequence number within the session), so grade by suffix match, not exact match. The tool only strip()s point_id and keeps its case."
+}

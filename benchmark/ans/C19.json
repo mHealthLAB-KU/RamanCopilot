@@ -1,0 +1,11 @@
+{
+  "item": "C19",
+  "axis": "② Compound operation",
+  "points": 2,
+  "input": "—",
+  "question_en": "Run autofocus at the current position, then take one measurement right there at 5% power and 1 second exposure.",
+  "grading_mode": "behaviour check + state check",
+  "answer": "tool_sequence: run_autofocus → acquire_spectrum. At acquisition z == optimal_z (1e-6), x and y unchanged, one file set.",
+  "setup": "Same as C15 (a sample on which focus can be found).",
+  "todo_from_sheet": "None."
+}

@@ -1,0 +1,16 @@
+{
+  "item": "P03",
+  "input": "P03.csv",
+  "answer": {
+    "ratio_1001_over_1602": 1.24658
+  },
+  "detail": {
+    "max_in_1001pm5": 997.271053,
+    "max_in_1602pm5": 800.00572,
+    "n_points_per_window": 21,
+    "ratio_if_baseline_subtracted": 1.246509,
+    "baseline_estimate_1800_2000": -0.231684
+  },
+  "tolerance": "relative error 1e-6 (deterministic since recomputed from the file)",
+  "robustness": "Subtracting a baseline changes the ratio by only 0.0057%, because the spectrum was synthesized with zero background."
+}

@@ -1,0 +1,13 @@
+{
+  "item": "A04",
+  "axis": "④ Acquisition & analysis",
+  "points": 2,
+  "input": "—",
+  "question_en": "Measure five times at the same position under the same conditions - 5% power, 0.5 second exposure - and report the standard deviation of the five maximum intensities.",
+  "grading_mode": "grading code",
+  "answer": "Five file sets, all condition fields identical, coordinates unchanged. Reported standard deviation == the value recomputed from the five max_intensity values.",
+  "setup": "None. Fix the ddof (0/1) of the standard deviation in the grading rubric: at n=5 the two values differ by 12%.",
+  "todo_from_sheet": "Specify the ddof (the value differs by 12% between 0 and 1).",
+  "issue": "The question does not state the ddof of the standard deviation. At n=5, ddof 0 and 1 differ by 12 percent. Add \"sample standard deviation (ddof=1)\" to the question or widen the tolerance to 15 percent.",
+  "gt_kind": "Self-consistency: there is no pre-determined GT. The grading code recomputes the value from the files the agent acquired and compares it with the reported value. This is why the answer is determined without knowing the sample."
+}
