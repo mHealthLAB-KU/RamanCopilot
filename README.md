@@ -35,8 +35,10 @@ Instrument control runs on Windows. Without the instrument, RamanCopilot can run
 
 ### Python packages
 ```bash
-pip install fastapi uvicorn pydantic python-dotenv numpy scipy pandas matplotlib opencv-python openpyxl pyyaml httpx pyserial fastdtw torch lpips langchain-core langchain-ollama langchain-openai langchain-anthropic langchain-google-genai ollama
+pip install -r requirements.txt
 ```
+The `requirements.txt` file specifies the versions of the Python packages used in the experiment. Since installing these may alter the versions of existing packages, it is recommended to perform the installation within a Python 3.13 virtual environment (created via `python -m venv .venv`, followed by `.venv\Scripts\activate`).
+
 
 ### Web interface
 ```bash
